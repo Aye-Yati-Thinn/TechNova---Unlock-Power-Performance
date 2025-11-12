@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - TechnoVA</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Boxicons CDN -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        /* Custom styles */
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Remove tap highlight on mobile */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Category card hover animation */
+        .category-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-12px) scale(1.02);
+        }
+        
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+              <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2 group cursor-pointer">
+                <img src="./images/output-onlinepngtools.png" style="width: 100px; color: #0f0f0f;">
+            
+                    <span class="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">TechnoVA</span>
+                </a>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                     <a href="index.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all">Home</a>
+                    <a href="shop.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all">Shop</a>
+                    <a href="categories.html" class="text-gray-900 font-semibold transition-all duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gray-900">Categories</a>
+                    <a href="brands.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all">Brands</a>
+                    <a href="accessories.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all">Accessories</a>
+                    <a href="support.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all">Support</a>
+                </div>
+                
+                <!-- Right Icons -->
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-700 hover:text-gray-900 transition-all duration-300 hover:scale-110 transform">
+                        <i class='bx bx-search text-2xl'></i>
+                    </button>
+                    <a href="profile.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 hover:scale-110 transform">
+                        <i class='bx bx-user text-2xl'></i>
+                    </a>
+                    <a href="cart.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 hover:scale-110 transform relative">
+                        <i class='bx bx-cart text-2xl'></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </a>
+                    </button>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobileMenuBtn" class="md:hidden text-gray-700 hover:text-gray-900 transition-transform duration-300 hover:scale-110">
+                        <i class='bx bx-menu text-2xl'></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+                <a href="shop.html" class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Shop</a>
+                <a href="categories.html" class="block text-gray-900 font-semibold py-2 px-3 rounded-lg bg-gray-50">Categories</a>
+                <a href="brands.html" class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Brands</a>
+                <a href="accessories.html" class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Accessories</a>
+                <a href="support.html" class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Support</a>
+                <a href="profile.html" class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Profile</a>
+                <a href="cart.html" class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Cart</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-black via-gray-900 to-black text-white py-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+            <div class="inline-block mb-4 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20">
+                🎯 Explore by Category
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                Browse <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Categories</span>
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                Find exactly what you need from our curated collection of tech products
+            </p>
+        </div>
+    </section>
+
+    <!-- Categories Grid -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Laptops Category -->
+                <a href="shop.html?category=laptops" class="category-card group bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl p-8 shadow-2xl overflow-hidden relative">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
+                    <div class="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full -ml-16 -mb-16"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="mb-6 float-animation">
+                            <i class='bx bx-laptop text-7xl text-white'></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-3">Laptops</h3>
+                        <p class="text-blue-100 mb-6">High-performance laptops for work, gaming, and creativity</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-white font-semibold">Browse Now</span>
+                            <i class='bx bx-right-arrow-alt text-3xl text-white group-hover:translate-x-2 transition-transform duration-300'></i>
+                        </div>
+                        <div class="mt-6 pt-6 border-t border-white/20">
+                            <p class="text-sm text-blue-100">24 Products Available</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Accessories Category -->
+                <a href="shop.html?category=accessories" class="category-card group bg-gradient-to-br from-pink-500 to-red-600 rounded-3xl p-8 shadow-2xl overflow-hidden relative">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
+                    <div class="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full -ml-16 -mb-16"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="mb-6 float-animation" style="animation-delay: 0.5s;">
+                            <i class='bx bx-headphone text-7xl text-white'></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-3">Accessories</h3>
+                        <p class="text-pink-100 mb-6">Premium tech accessories to enhance your setup</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-white font-semibold">Browse Now</span>
+                            <i class='bx bx-right-arrow-alt text-3xl text-white group-hover:translate-x-2 transition-transform duration-300'></i>
+                        </div>
+                        <div class="mt-6 pt-6 border-t border-white/20">
+                            <p class="text-sm text-pink-100">35 Products Available</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Peripherals Category -->
+                <a href="shop.html?category=peripherals" class="category-card group bg-gradient-to-br from-green-500 to-teal-600 rounded-3xl p-8 shadow-2xl overflow-hidden relative">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
+                    <div class="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full -ml-16 -mb-16"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="mb-6 float-animation" style="animation-delay: 1s;">
+                            <i class='bx bx-mouse text-7xl text-white'></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-3">Peripherals</h3>
+                        <p class="text-green-100 mb-6">Keyboards, mice, and more to boost productivity</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-white font-semibold">Browse Now</span>
+                            <i class='bx bx-right-arrow-alt text-3xl text-white group-hover:translate-x-2 transition-transform duration-300'></i>
+                        </div>
+                        <div class="mt-6 pt-6 border-t border-white/20">
+                            <p class="text-sm text-green-100">29 Products Available</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Gaming Category -->
+                <a href="shop.html?category=gaming" class="category-card group bg-gradient-to-br from-orange-500 to-red-600 rounded-3xl p-8 shadow-2xl overflow-hidden relative">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
+                    <div class="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full -ml-16 -mb-16"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="mb-6 float-animation" style="animation-delay: 1.5s;">
+                            <i class='bx bx-joystick text-7xl text-white'></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-3">Gaming</h3>
+                        <p class="text-orange-100 mb-6">High-performance gaming gear for serious gamers</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-white font-semibold">Browse Now</span>
+                            <i class='bx bx-right-arrow-alt text-3xl text-white group-hover:translate-x-2 transition-transform duration-300'></i>
+                        </div>
+                        <div class="mt-6 pt-6 border-t border-white/20">
+                            <p class="text-sm text-orange-100">Coming Soon</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Monitors Category -->
+                <a href="shop.html?category=monitors" class="category-card group bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl p-8 shadow-2xl overflow-hidden relative">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
+                    <div class="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full -ml-16 -mb-16"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="mb-6 float-animation" style="animation-delay: 2s;">
+                            <i class='bx bx-desktop text-7xl text-white'></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-3">Monitors</h3>
+                        <p class="text-indigo-100 mb-6">Crystal-clear displays for work and entertainment</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-white font-semibold">Browse Now</span>
+                            <i class='bx bx-right-arrow-alt text-3xl text-white group-hover:translate-x-2 transition-transform duration-300'></i>
+                        </div>
+                        <div class="mt-6 pt-6 border-t border-white/20">
+                            <p class="text-sm text-indigo-100">Coming Soon</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Storage Category -->
+                <a href="shop.html?category=storage" class="category-card group bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl p-8 shadow-2xl overflow-hidden relative">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -mr-20 -mt-20"></div>
+                    <div class="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full -ml-16 -mb-16"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="mb-6 float-animation" style="animation-delay: 2.5s;">
+                            <i class='bx bx-hdd text-7xl text-white'></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-3">Storage</h3>
+                        <p class="text-cyan-100 mb-6">SSDs, HDDs, and external drives for all your data</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-white font-semibold">Browse Now</span>
+                            <i class='bx bx-right-arrow-alt text-3xl text-white group-hover:translate-x-2 transition-transform duration-300'></i>
+                        </div>
+                        <div class="mt-6 pt-6 border-t border-white/20">
+                            <p class="text-sm text-cyan-100">Coming Soon</p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Products Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Popular Products</h2>
+                <p class="text-gray-600 text-lg">Top picks from our categories</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product Card 1 -->
+                <div class="group bg-gray-50 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div class="bg-white rounded-xl p-6 mb-4">
+                        <i class='bx bx-laptop text-6xl text-gray-300 group-hover:text-blue-500 transition-colors duration-300'></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">MacBook Pro 14"</h3>
+                    <p class="text-2xl font-bold text-gray-900">$1,999</p>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="group bg-gray-50 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div class="bg-white rounded-xl p-6 mb-4">
+                        <i class='bx bx-headphone text-6xl text-gray-300 group-hover:text-pink-500 transition-colors duration-300'></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Premium Headphones</h3>
+                    <p class="text-2xl font-bold text-gray-900">$349</p>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="group bg-gray-50 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div class="bg-white rounded-xl p-6 mb-4">
+                        <i class="bi bi-keyboard text-6xl text-gray-300 group-hover:text-green-500 transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Mechanical Keyboard</h3>
+                    <p class="text-2xl font-bold text-gray-900">$159</p>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="group bg-gray-50 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div class="bg-white rounded-xl p-6 mb-4">
+                        <i class='bx bx-mouse text-6xl text-gray-300 group-hover:text-orange-500 transition-colors duration-300'></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Gaming Mouse</h3>
+                    <p class="text-2xl font-bold text-gray-900">$89</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="shop.html" class="inline-block px-8 py-4 bg-gray-900 text-white rounded-xl font-semibold hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    View All Products
+                    <i class='bx bx-right-arrow-alt text-xl ml-2 align-middle'></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer Section -->
+    <footer class="bg-gradient-to-b from-gray-900 to-black text-gray-300 py-16 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-16">
+                <!-- Left Column - Newsletter -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-2 mb-6 group cursor-pointer">
+                        <i class='bx bx-bot text-4xl text-white group-hover:rotate-12 transition-transform duration-300'></i>
+                        <span class="text-2xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">TechnoVA</span>
+                    </div>
+                    <h3 class="text-white font-bold text-lg mb-4">Stay Ahead with Exclusive Deals & Tech Tips!</h3>
+                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+                        Subscribe to our newsletter and get the latest updates on new arrivals, flash sales, expert reviews, and handy tech advice — straight to your inbox!
+                    </p>
+                    
+                    <!-- Newsletter Form -->
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input 
+                            type="email" 
+                            placeholder="Enter your email address" 
+                            class="flex-1 px-5 py-3 bg-gray-800/50 backdrop-blur-sm text-white rounded-xl border border-gray-700 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 placeholder-gray-500 transition-all duration-300"
+                        >
+                        <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-8 py-3 rounded-xl transition-all duration-300 font-semibold whitespace-nowrap transform hover:scale-105 shadow-lg hover:shadow-2xl">
+                            Subscribe →
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Middle Column - Links -->
+                <div class="grid grid-cols-2 gap-8 lg:gap-12">
+                    <!-- Column 1 -->
+                    <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li><a href="shop.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Shop</a></li>
+                            <li><a href="categories.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Categories</a></li>
+                            <li><a href="brands.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Brands</a></li>
+                            <li><a href="Accessories.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Accessories</a></li>
+                           
+                        </ul>
+                    </div>
+                    
+                    <!-- Column 2 -->
+                    <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Company</h4>
+                        <ul class="space-y-3">
+                            <li><a href="about.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ About Us</a></li>
+                            <li><a href="contant.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Contact</a></li>
+                            <li><a href="warranty.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Privacy Policy</a></li>
+                            <li><a href="shipping info.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Terms of Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--column--3-->
+                 <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Others</h4>
+                        <ul class="space-y-3">
+                            <li><a href="support.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Supports</a></li>
+                            <li><a href="blog.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Blogs</a></li>
+                             <li><a href="partner.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Partners</a></li>
+                        </ul>
+                    </div>
+                
+                <!-- Right Column - Social -->
+                <div class="lg:col-span-1">
+                    <h4 class="text-white font-bold mb-4 text-lg">Follow Us</h4>
+                    <p class="text-sm text-gray-400 mb-6">Stay connected on social media</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/share/19kCEyhj9t/" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-purple-600 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-facebook text-2xl'></i>
+                        </a>
+                        <a href="https://www.instagram.com/the.apexsquad?igsh=ZnV5ZHpqbmZ3Zzd2" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-pink-600 hover:to-purple-600 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-instagram text-2xl'></i>
+                        </a>
+                        <a href="https://www.youtube.com/@TheApexSquad-s1w" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-900 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-youtube text-2xl'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="mt-16 pt-8 border-t border-gray-800 text-center">
+                <p class="text-sm text-gray-500">© 2025 TechnoVA. All rights reserved. Made with <span class="text-red-500">❤</span> for tech enthusiasts</p>
+            </div>
+        </div>
+    </footer>
+  
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

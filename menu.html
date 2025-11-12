@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Waffle Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+
+    .all-menu-section h2 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      margin-top: 60px;
+      margin-bottom: 60px;
+      color: #fff;
+      letter-spacing: 2px;
+    }
+
+    .all-menu-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 80px 40px;
+      justify-items: center;
+      max-width: 1200px;
+      margin: 0 auto 80px;
+    }
+
+    .all-menu-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .all-menu-item img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .all-menu-item img:hover {
+      transform: scale(1.05);
+    }
+
+    .all-menu-item .text {
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+      margin-top: 20px;
+      max-width: 140px;
+      line-height: 1.4;
+    }
+
+    .all-menu-item .price-row {
+      margin-top: 50px;
+      position: relative;
+    }
+
+    .all-menu-item .price-row::before {
+      content: '';
+      position: absolute;
+      top: -35px;
+      left: 50%;
+      width: 2px;
+      height: 30px;
+      background: #fff;
+      transform: translateX(-50%);
+    }
+
+    .all-menu-item .price {
+      font-size: 24px;
+      font-weight: 400;
+      color: #fff;
+      letter-spacing: 1px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .all-menu-item button {
+      display: none;
+    }
+
+    @media (max-width: 992px) {
+      .all-menu-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .all-menu-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="all-menu-section" id="all-menu1">
+  <h2>OUR FULL MENU</h2>
+  <div class="all-menu-list">
+
+    <!-- Menu Item 1 -->
+    <div class="all-menu-item">
+      <img src="image/photo1.jpg" alt="Vanilla Waffle">
+      <div class="text">Vanilla Waffle</div>
+      <div class="price-row">
+        <div class="price">$3.50</div>
+      </div>
+    </div>
+
+    <!-- Menu Item 2 -->
+    <div class="all-menu-item">
+      <img src="image/photo2.jpg" alt="Chocolate Delight">
+      <div class="text">Chocolate Delight</div>
+      <div class="price-row">
+        <div class="price">$4.00</div>
+      </div>
+    </div>
+
+    <!-- Menu Item 3 -->
+    <div class="all-menu-item">
+      <img src="image/photo3.jpg" alt="Strawberry Cream">
+      <div class="text">Strawberry Cream</div>
+      <div class="price-row">
+        <div class="price">$4.20</div>
+      </div>
+    </div>
+
+    <!-- Menu Item 4 -->
+    <div class="all-menu-item">
+      <img src="image/photo4.jpg" alt="Nutty Crunch">
+      <div class="text">Nutty Crunch</div>
+      <div class="price-row">
+        <div class="price">$3.80</div>
+      </div>
+    </div>
+
+    <!-- Menu Item 5 -->
+    <div class="all-menu-item">
+      <img src="image/photo5.jpg" alt="Maple Syrup">
+      <div class="text">Maple Syrup</div>
+      <div class="price-row">
+        <div class="price">$3.90</div>
+      </div>
+    </div>
+
+    <!-- Menu Item 6 -->
+    <div class="all-menu-item">
+      <img src="image/photo6.jpg" alt="Cheesy Waffle">
+      <div class="text">Cheesy Waffle</div>
+      <div class="price-row">
+        <div class="price">$4.10</div>
+      </div>
+    </div>
+    <!-- Menu Item 7 -->
+    <div class="all-menu-item">
+      <img src="image/photo7.jpg" alt="Fruit Splash">
+      <div class="text">Fruit Splash</div>
+      <div class="price-row">
+        <div class="price">$4.30</div>
+      </div>
+    </div>
+
+    <!-- Menu Item 8 -->
+    <div class="all-menu-item">
+      <img src="image/photo8.jpg" alt="Banana Bliss">
+      <div class="text">Banana Bliss</div>
+      <div class="price-row">
+        <div class="price">$3.70</div>
+      </div>
+    </div>
+
+    <!-- Menu Item 9 -->
+    <div class="all-menu-item">
+      <img src="image/photo9.jpg" alt="Matcha Waffle">
+      <div class="text">Matcha Waffle</div>
+      <div class="price-row">
+        <div class="price">$4.50</div>
+      </div>
+    </div>
+
+    <!-- Menu Item 10 -->
+    <div class="all-menu-item">
+      <img src="image/photo10.jpg" alt="Caramel Heaven">
+      <div class="text">Caramel Heaven</div>
+      <div class="price-row">
+        <div class="price">$4.00</div>
+      </div>
+    </div>
+
+    <!-- Menu Item 11 -->
+    <div class="all-menu-item">
+      <img src="image/photo11.jpg" alt="Oreo Special">
+      <div class="text">Oreo Special</div>
+      <div class="price-row">
+        <div class="price">$4.60</div>
+      </div>
+    </div>
+
+    <!-- Menu Item 12 -->
+    <div class="all-menu-item">
+      <img src="image/photo12.jpg" alt="Classic Butter">
+      <div class="text">Classic Butter</div>
+      <div class="price-row">
+        <div class="price">$3.40</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

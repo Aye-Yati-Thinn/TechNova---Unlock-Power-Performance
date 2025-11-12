@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova - Unlock Power & Performance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+     <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Boxicons CDN -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+           :root {
+            --dark-bg: #1a1a1a;
+            --darker-bg: #0f0f0f;
+            --accent-color: #007bff;
+            --text-light: #ffffff;
+            --text-muted: #b0b0b0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+/* testimonial-section*/
+    .testimonial-section {
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .testimonial-section h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        font-family:'Times New Roman', Times, serif;
+    }
+
+    .testimonial-section p {
+        color: #555;
+        margin-bottom: 40px;
+    }
+
+    .testimonial-container {
+        position: relative;
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .testimonial {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        display: none;
+        animation: fadeIn 0.5s ease;
+    }
+
+    .testimonial.active {
+        display: block;
+    }
+
+    .testimonial img {
+        width: 100px;
+        height: 100px;
+        border-radius: 30%;
+        object-fit: cover;
+        margin-bottom: 20px;
+    }
+
+    .testimonial-text {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .testimonial-name {
+        font-weight: 600;
+    }
+
+    .testimonial-role {
+        font-size: 0.9rem;
+        color: #777;
+    }
+
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: white;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        cursor: pointer;
+        font-size: 1.2rem;
+    }
+
+    .arrow:hover {
+        background: #f0f0f0;
+    }
+
+    .arrow.left {
+        left: -60px;
+    }
+
+    .arrow.right {
+        right: -60px;
+    }
+
+    .dots {
+        margin-top: 20px;
+    }
+
+    .dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: #ccc;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+
+    .dot.active {
+        background: #4e73df;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+         
+        
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .footer {
+                text-align: center;
+            }
+        }
+</style>
+</head>
+<body>
+    <!-- Testimonial-section -->
+<div class="testimonial-section">
+    <h2>What Our Customers Say</h2>
+    <p>See how our customers are growing their businesses and getting results.</p>
+
+    <div class="testimonial-container">
+        <div class="arrow left" onclick="changeTestimonial(-1)">&#10094;</div>
+        <div class="arrow right" onclick="changeTestimonial(1)">&#10095;</div>
+
+        <div class="testimonial active">
+            <img src="images/lemomjpg.jpg" alt="Customer 1">
+            <div class="testimonial-text">“As a student, I was looking for a laptop that's lightweight with a long-lasting battery for my
+                    projects and reading. The staff at this store paid close attention to my needs and recommended a
+                    suitable model. I'm really satisfied because the price was fair and the quality is excellent.”</div>
+            <div class="testimonial-name">Lemon</div>
+            <div class="testimonial-role">University-Student</div>
+        </div>
+
+        <div class="testimonial">
+            <img src="images/simon.jpg" alt="Customer 2">
+            <div class="testimonial-text">“For my business, I needed a fast and high-performance laptop. I consulted with the website and
+                    placed my order. The item arrived just one day later. The fast delivery was a huge plus, as it
+                    didn't disrupt my work. I've been using it without any issues so far, and I'm very grateful.”</div>
+            <div class="testimonial-name">Simon</div>
+            <div class="testimonial-role">(Entrepreneur)</div>
+        </div>
+
+        <div class="testimonial">
+            <img src="images/kzee.jpg" alt="Customer 3">
+            <div class="testimonial-text">“As a developer, I needed a fast laptop with a lot of memory for coding. This website offers a wide
+                    variety of choices, and the staff are knowledgeable and skilled at explaining the technical details.
+                    Even after I bought the item, they provided services like installing necessary software and offering
+                    advice. I am truly satisfied with the entire experience.”</div>
+            <div class="testimonial-name">KZEEE</div>
+            <div class="testimonial-role">(Developer & Vd editor)</div>
+        </div>
+
+        <div class="testimonial">
+            <img src="images/amikos.jpg" alt="Customer 3">
+            <div class="testimonial-text">“I work from home and needed a comfortable, ergonomic setup. I found the perfect monitor, keyboard,
+                    and mouse on this site. The delivery was fast, and the customer service was excellent. When I had a
+                    question about setting up the monitor, they were very helpful and guided me through the process. I
+                    highly recommend this store for its great accessories and support.”</div>
+            <div class="testimonial-name">Amiko</div>
+            <div class="testimonial-role">(Designer)</div>
+        </div>
+
+        <div class="testimonial">
+            <img src="images/XaioZhan.jpg" alt="Customer 3">
+            <div class="testimonial-text">“As a graphic designer, I need a laptop with a high-quality display and a powerful processor to run
+                    my software smoothly. This website's staff really understood my professional requirements. They
+                    helped me choose a laptop that not only meets my needs but also fits my budget. I'm very happy with
+                    my purchase and the expert advice I received.”</div>
+            <div class="testimonial-name">Xaio Qiang</div>
+            <div class="testimonial-role">(Volunteer)</div>
+        </div>
+
+        <div class="dots">
+            <span class="dot active" onclick="showTestimonial(0)"></span>
+            <span class="dot" onclick="showTestimonial(1)"></span>
+            <span class="dot" onclick="showTestimonial(2)"></span>
+            <span class="dot" onclick="showTestimonial(3)"></span>
+            <span class="dot" onclick="showTestimonial(4)"></span>
+        </div>
+    </div>
+</div>
+
+<script>
+ const slides = document.querySelector('.slides');
+ const slideCount = document.querySelectorAll('.slide').length;
+ const dotsContainer = document.querySelector('.dots');
+ let currentIndex = 0;
+ const testimonials = document.querySelectorAll('.testimonial');
+ const dots = document.querySelectorAll('.dot');
+ function showTestimonial(index) {
+    testimonials.forEach((t, i) => {
+        t.classList.toggle('active', i === index);
+        dots[i].classList.toggle('active', i === index);
+    });
+    currentIndex = index;
+ }
+ function changeTestimonial(step) {
+    currentIndex += step;
+    if (currentIndex < 0) currentIndex = testimonials.length - 1;
+    if (currentIndex >= testimonials.length) currentIndex = 0;
+    showTestimonial(currentIndex);
+ }
+</script>
+     <!-- Footer Section -->
+    <footer class="bg-gradient-to-b from-gray-900 to-black text-gray-300 py-16 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-16">
+                <!-- Left Column - Newsletter -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-2 mb-6 group cursor-pointer">
+                        <i class='bx bx-bot text-4xl text-white group-hover:rotate-12 transition-transform duration-300'></i>
+                        <span class="text-2xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">TechnoVA</span>
+                    </div>
+                    <h3 class="text-white font-bold text-lg mb-4">Stay Ahead with Exclusive Deals & Tech Tips!</h3>
+                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+                        Subscribe to our newsletter and get the latest updates on new arrivals, flash sales, expert reviews, and handy tech advice — straight to your inbox!
+                    </p>
+                    
+                    <!-- Newsletter Form -->
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input 
+                            type="email" 
+                            placeholder="Enter your email address" 
+                            class="flex-1 px-5 py-3 bg-gray-800/50 backdrop-blur-sm text-white rounded-xl border border-gray-700 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 placeholder-gray-500 transition-all duration-300"
+                        >
+                        <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-8 py-3 rounded-xl transition-all duration-300 font-semibold whitespace-nowrap transform hover:scale-105 shadow-lg hover:shadow-2xl">
+                            Subscribe →
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Middle Column - Links -->
+                <div class="grid grid-cols-2 gap-8 lg:gap-12">
+                    <!-- Column 1 -->
+                    <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li><a href="shop.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Shop</a></li>
+                            <li><a href="categories.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Categories</a></li>
+                            <li><a href="brands.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Brands</a></li>
+                            <li><a href="Accessories.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Accessories</a></li>
+                           
+                        </ul>
+                    </div>
+                    
+                    <!-- Column 2 -->
+                    <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Company</h4>
+                        <ul class="space-y-3">
+                            <li><a href="about.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ About Us</a></li>
+                            <li><a href="contant.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Contact</a></li>
+                            <li><a href="warranty.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Privacy Policy</a></li>
+                            <li><a href="shipping info.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Terms of Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--column--3-->
+                 <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Others</h4>
+                        <ul class="space-y-3">
+                            <li><a href="support.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Supports</a></li>
+                            <li><a href="blog.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Blogs</a></li>
+                             <li><a href="partner.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Partners</a></li>
+                        </ul>
+                    </div>
+                
+                <!-- Right Column - Social -->
+                <div class="lg:col-span-1">
+                    <h4 class="text-white font-bold mb-4 text-lg">Follow Us</h4>
+                    <p class="text-sm text-gray-400 mb-6">Stay connected on social media</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/share/19kCEyhj9t/" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-purple-600 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-facebook text-2xl'></i>
+                        </a>
+                        <a href="https://www.instagram.com/the.apexsquad?igsh=ZnV5ZHpqbmZ3Zzd2" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-pink-600 hover:to-purple-600 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-instagram text-2xl'></i>
+                        </a>
+                        <a href="https://www.youtube.com/@TheApexSquad-s1w" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-900 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-youtube text-2xl'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="mt-16 pt-8 border-t border-gray-800 text-center">
+                <p class="text-sm text-gray-500">© 2025 TechnoVA. All rights reserved. Made with <span class="text-red-500">❤</span> for tech enthusiasts</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

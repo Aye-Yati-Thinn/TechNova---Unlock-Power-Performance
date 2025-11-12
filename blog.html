@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova - Unlock Power & Performance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+   <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Boxicons CDN -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+    .container{
+    width: 100%;
+    height: auto;
+   }
+   .Blog-section{
+    width: 80%;
+    margin: auto;
+   }
+   .Blog-section .title{
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    font-family: 'Poppins', sans-serif;
+   }
+   .Blog-section .title h1{
+    font-size:25px;
+    margin-top: 30px;
+    font-weight: 700;
+    color: #bc81d2;
+    font-family:Georgia, 'Times New Roman', Times, serif
+   
+   }
+   .Blog-section .title p{
+    font-size: 15px;
+    margin-top: 10px;
+    color: rgb(245, 241, 241);
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
+   }
+  .content{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+.content .card p{
+    font-size: 14px;
+    margin-top: 10px;
+    color: #f5f1f1;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
+}
+  .content .card{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 300px;
+    height: 100%;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px #bc81d2;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    transition:  transform 0.3s ease,box-shadow 0.3s ease;
+    background-color: #0f0f0f;
+  
+   }
+   .content .card:hover{
+    transform:scale(1.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+   }
+   .content .card img{
+    width: 100%;
+    height:auto;
+    border-radius: 10px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 8px;
+   }
+   .content .card h2{
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #e7a4e3;
+   }
+   .content .card p{
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 1.4;
+    color: #fbf5f5;
+    font-family: 'Lato', sans-serif;
+   }
+   .content .card ul{
+    margin-top: 10px;
+    padding-left: 20px;
+   }
+   .content .card ul li{
+    font-size: 14px;
+    margin-top: 5px;
+    color: #fbf5f5;
+    line-height: 1.5;
+   }
+   /*see more btn*/
+.card p, 
+.card ul {
+  max-height: 70px;      
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.card input[type=checkbox] {
+  display: none;
+}
+
+
+.card input[type=checkbox]:checked ~ p,
+.card input[type=checkbox]:checked ~ ul {
+  max-height: 1000px;
+}
+
+/* Button Design */
+.see-more {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #531968;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.card input[type=checkbox]:not(:checked) ~ .see-more::after {
+  content: "See More";
+}
+.card input[type=checkbox]:checked ~ .see-more::after {
+  content: "See Less";
+}
+
+@media (max-width: 992px) {
+  .content {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  .content .card {
+    width: 100%;
+    margin: 10px auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    grid-template-columns: 1fr; 
+  }
+  .content .card {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .Blog-section .title h1 {
+    font-size: 20px;
+  }
+  .Blog-section .title p {
+    font-size: 14px;
+  }
+}
+        :root {
+            --dark-bg: #1a1a1a;
+            --darker-bg: #0f0f0f;
+            --accent-color: #007bff;
+            --text-light: #ffffff;
+            --text-muted: #b0b0b0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+        }        
+        
+        
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .footer {
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+     <!-- Hero Section -->
+    <section class="relative bg-black text-white py-24 overflow-hidden">
+        <!-- Animated blur backgrounds -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl float-animation"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl float-animation" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl float-animation" style="animation-delay: 4s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+            <div class="inline-block mb-4 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20">
+                ✨ Welcome From Our Blog
+            </div>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+                Our Ultimate Tech &
+                <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">& Accessories Blogs</span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+                "Discover the hottest laptops & must-have accessories for students,gamers & professionals!"
+            </p>
+            
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">24/7</div>
+                    <div class="text-sm text-gray-400 mt-2">Support Available</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">&lt;5min</div>
+                    <div class="text-sm text-gray-400 mt-2">Response Time</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-400 to-teal-400 bg-clip-text text-transparent">98%</div>
+                    <div class="text-sm text-gray-400 mt-2">Satisfaction Rate</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">10k+</div>
+                    <div class="text-sm text-gray-400 mt-2">Happy Customers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+       <div class="container">
+    <div class="Blog-section">
+      
+        <div class="content">
+            <div class="card">
+                <img src="./assets/images/accessories/forblog.jpg">
+                <h2>Welcome to Our Blog!</h2>
+                <input type="checkbox" id="c1">
+                <p>
+                At Technova, we're dedicated to bringing you the latest insights, news,
+                and reviews from the world of laptops and accessories.<br>Whether you're a student,
+                professional, gamer, or tech enthusiast, our blog is designed to help you make informed decisions 
+                when choosing your devices.<br>Explore our posts on top laptop brands like Dell, Lenovo, HP, Apple, MSI, 
+                Acer, and Asus, and discover essential accessories such as laptop bags, headphones, keyboards, mice, 
+                and AirPods.<br> We provide detailed product reviews, buying guides, tips, and tutorials to ensure you get 
+                the best performance, style, and value for your tech investments.<br>Stay updated with the newest trends, 
+                tech innovations, and practical advice, all in one place. <br>At Technova Blog, we make technology simple, 
+                accessible, and exciting -helping you get the most out of your devices every day.
+                </p>
+            
+                <label for="c1" class="see-more"></label>
+            </div>
+            <div class="card">
+                <img src="./assets/images/accessories/forlaptop.jpg">
+                <h2>Laptops Brands-Hot Picks!</h2>
+                <input type="checkbox" id="c2">
+                <p>We carry the best laptops that everyone's raving about!</p>
+                <ul>
+                <li><b>Acer</b> - Affordable, reliable, perfect for everyday use.</li>
+                <li><b>Apple (MacBook)</b> - Sleek design, lightning-fast performance, ideal for creatives.</li>
+                <li><b>Dell</b> - Strong, durable, office-ready, built to last.</li>
+                <li><b>HP</b> - Smart balance of performance and price, great for students & professionals.</li>
+                <li><b>MSI</b> - Ultimate gaming machines with top-notch graphics.</li>
+                <li><b>Lenovo</b> - Business-friendly, powerful, and budget-savvy.</li>
+                <li><b>Asus</b>-Innovative,high-proformance laptops with stunning designs;perfect for gaming work, and creativity.</li>
+                </ul>
+                <label for="c2" class="see-more"></label>
+            </div>
+            <div class="card">
+                <img src="./assets/images/accessories/forbag.jpg">
+                <h2>Laptop Bags-Carry Your Tech in Style</h2>
+                <input type="checkbox" id="c3">
+                <p>Protect your laptop in style with our trendy and durabke laptop bags:</p>
+                <ul>
+                    <li><b>Slim Bags</b>-Lightweight and sleek,perfect for daily use.</li>
+                    <li><b>Backpacks</b>-Spacious,comfortable,ideal for students and travelers.</li>
+                    <li><b>Professional Bags</b>-Elegant and office-ready , carry your laptop like a pro.</li>
+                </ul>
+                <label for="c3" class="see-more"></label>
+            </div>
+            <div class="card">
+                <img src="./assets/images/accessories/mic.webp">
+                <h2>Microphones-Sound like a Pro</h2>
+                <input type="checkbox" id="c4">
+                <p>Whether you're streaming ,gaming, teching , or recording music , our microphone will make your voice crystal clear.</p>
+                <uL>
+                    <li><b>USB Microphones</b>-Plug & play , super easy to use</li>
+                    <li><b>Studio Microphones</b>-Perfect for professional recording or streaming</li>
+                </uL>
+                <label for="c4" class="see-more"></label>
+            </div>
+            <div class="card">
+                <img src="./assets/images/accessories/forkeyboard.jpg">
+                <h2>Keyboards & Mice-Work & Play with Ease </h2>
+                <input type="checkbox" id="c5">
+                <p>We offer keyboardss and mice that make every click count.</p>
+                <ul>
+                    <li><b>Mechanical Keyboards</b>-Responsive backlit,perfect for garmers</li>
+                    <li><b>Wireless Mouse</b>-Convenient,protable,no wires needed.</li>
+                    <li><b>Gaming Mouse</b>-High DPI,precision accuracy , and stylish design.</li>
+                </ul>
+                <label for="c5" class="see-more"></label>
+            </div> 
+            <div class="card">
+                <img src="./assets/images/accessories/forheadphone.jpg">
+                <h2>AirPods & Some Accessories- Hear the Difference</h2>
+                <input type="checkbox" id="c6">
+                <p>Listen to music,take calls,or game with high-quality wireless audio.</p>
+                <ul>
+                    <li><b>Apple AirPods</b>-Seamless connection with all Apple devices.</li>
+                    <li><b>Wireless Earbuds</b>-Compatible with Android and Windows divices.</li>
+                    <li><b>Accessories</b>-Chargers,cables,proctive covers and more</li>
+
+                </ul>
+                <label for="c6" class="see-more"></label>
+            </div>
+            <div class="card">
+                <img src="./assets/images/accessories/quicktip.png">
+                <h2>Tech Tips & Guides</h2>
+                <input type="checkbox" id="c7">
+                <p>Stay updated with quick and useful guides:</p>
+                <ul>
+                    <li><b>Boost Laptop Speed</b>-Simple tricks to make your laptop faster.</li>
+                    <li><b>Battery Sving</b>-Extend your battery life with smart settings.</li>
+                    <li><b>Free Tools</b>-Must-have apps for students and professionals.</li>
+                </ul>
+                <label for="c7" class="see-more"></label>
+            </div>
+            <div class="card">
+                <img src="./assets/images/accessories/review.jpg">
+                <h2>Customer Reviews & Hot Deals</h2>
+                <input type="checkbox" id="c8">
+                <p>What our happy customers are staying,don't miss out on promos!</p>
+                <ul>
+                    <li>"My Acer laptop is super fast adn affordable!"</li>
+                    <li>"The Hp bag is stylish and really durable."</li>
+                    <li><b>Limited offer:</b>20% off on lenovo laptops this week!</li>
+                  
+                </ul>
+                <label for="c8" class="see-more"></label>
+            </div>
+            <div class="card">
+                <img src="./assets/images/accessories/miss.png">
+                <h2>Don't Miss Out-Shop Now!</h2>
+                <input type="checkbox" id="c9">
+                <P>Before you leave,remember these reasons why you should act now:</P>
+                <ul>
+                    <li><b>Stay Ahead:</b>Get the lastest laptops & Accessories before they sell out.</li>
+                    <li><b>Best Deals:</b>Exclusive discounts and limited-time offers you won't find elsewhere .</li>
+                    <li><b>Right for you:</b>Whether you're a students,gamer ,or professional-we've got you covered.</li>
+                </ul>
+               
+                <label for="c9" class="see-more"></label>
+            </div>
+        </div>
+    </div>
+   </div><br> <br> 
+<!-- Footer Section -->
+    <footer class="bg-gradient-to-b from-gray-900 to-black text-gray-300 py-16 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-16">
+                <!-- Left Column - Newsletter -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-2 mb-6 group cursor-pointer">
+                        <i class='bx bx-bot text-4xl text-white group-hover:rotate-12 transition-transform duration-300'></i>
+                        <span class="text-2xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">TechnoVA</span>
+                    </div>
+                    <h3 class="text-white font-bold text-lg mb-4">Stay Ahead with Exclusive Deals & Tech Tips!</h3>
+                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+                        Subscribe to our newsletter and get the latest updates on new arrivals, flash sales, expert reviews, and handy tech advice — straight to your inbox!
+                    </p>
+                    
+                    <!-- Newsletter Form -->
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input 
+                            type="email" 
+                            placeholder="Enter your email address" 
+                            class="flex-1 px-5 py-3 bg-gray-800/50 backdrop-blur-sm text-white rounded-xl border border-gray-700 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 placeholder-gray-500 transition-all duration-300"
+                        >
+                        <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-8 py-3 rounded-xl transition-all duration-300 font-semibold whitespace-nowrap transform hover:scale-105 shadow-lg hover:shadow-2xl">
+                            Subscribe →
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Middle Column - Links -->
+                <div class="grid grid-cols-2 gap-8 lg:gap-12">
+                    <!-- Column 1 -->
+                    <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li><a href="shop.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Shop</a></li>
+                            <li><a href="categories.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Categories</a></li>
+                            <li><a href="brands.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Brands</a></li>
+                            <li><a href="Accessories.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Accessories</a></li>
+                           
+                        </ul>
+                    </div>
+                    
+                    <!-- Column 2 -->
+                    <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Company</h4>
+                        <ul class="space-y-3">
+                            <li><a href="about.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ About Us</a></li>
+                            <li><a href="contant.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Contact</a></li>
+                            <li><a href="warranty.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Privacy Policy</a></li>
+                            <li><a href="shipping info.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Terms of Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--column--3-->
+                 <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Others</h4>
+                        <ul class="space-y-3">
+                            <li><a href="support.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Supports</a></li>
+                            <li><a href="blog.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Blogs</a></li>
+                             <li><a href="partner.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Partners</a></li>
+                        </ul>
+                    </div>
+                
+                <!-- Right Column - Social -->
+                <div class="lg:col-span-1">
+                    <h4 class="text-white font-bold mb-4 text-lg">Follow Us</h4>
+                    <p class="text-sm text-gray-400 mb-6">Stay connected on social media</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/share/19kCEyhj9t/" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-purple-600 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-facebook text-2xl'></i>
+                        </a>
+                        <a href="https://www.instagram.com/the.apexsquad?igsh=ZnV5ZHpqbmZ3Zzd2" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-pink-600 hover:to-purple-600 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-instagram text-2xl'></i>
+                        </a>
+                        <a href="https://www.youtube.com/@TheApexSquad-s1w" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-900 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-youtube text-2xl'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="mt-16 pt-8 border-t border-gray-800 text-center">
+                <p class="text-sm text-gray-500">© 2025 TechnoVA. All rights reserved. Made with <span class="text-red-500">❤</span> for tech enthusiasts</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

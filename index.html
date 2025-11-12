@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova - Unlock Power & Performance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+   <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Boxicons CDN -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Bootstrap Icons CDN -->
+    <style>
+        :root {
+            --dark-bg: #1a1a1a;
+            --darker-bg: #0f0f0f;
+            --accent-color: #007bff;
+            --text-light: #ffffff;
+            --text-muted: #b0b0b0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+         /* Custom styles */
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        
+        /* Hero section background */
+        .hero-gradient {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #0a0a0a 100%);
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Remove tap highlight on mobile */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Modern glassmorphism effect */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 0%, #9ca3af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Modern card shadow */
+        .modern-shadow {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+       
+        /* Hero Section 
+        .hero-section {
+            background-image: url(./images/BG-Image.jpg);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            width: 100%;
+            height: 105vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #ccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btn {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .hero-btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 3rem;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+        }*/
+
+        /* Brands Section */
+        .brands-section {
+            background-color: #f6f6fa;
+            padding: 60px 0;
+            color: #090101;
+            position: relative;
+            width: 100%;
+            padding: 20px;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        } 
+        
+       .brands-section .container{
+            border: solid #0a0a0a 6px;
+            border-radius:20px;
+            height: 50vh;
+            background-color: rgba(0, 0, 0, 0.1) ;
+           
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .brand-logo {
+            height: 80px;
+            width: auto;
+          transition: all 0.3s ease;
+          width: 200px;
+           
+        }
+
+        .brand-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* Accessories Section 
+        .accessories-section {
+            padding: 80px 0;
+            background-color: var(--dark-bg);
+        }
+
+        .accessories-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .product-card {
+            background-color: var(--darker-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+            border: 1px solid #333;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+*/
+       
+    /* About Us Section */
+        body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #e8e4e4;
+    }
+
+    section {
+        padding: 60px 10%;
+    }
+
+    /* About Us Section */
+    .about-section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 40px;
+        background-color: white;
+    }
+    .about-text { flex: 1; min-width: 300px; }
+    .about-text h1 { font-size: 36px; margin-bottom: 20px;font-family:'Times New Roman', Times, serif; }
+    .about-text p { font-size: 18px; line-height: 1.6;font-family:'Courier New', Courier, monospace; }
+    .about-image { flex: 1; min-width: 300px; }
+    .about-image img { max-width: 100%; border-radius: 8px; }
+
+    /* Our Story Section */
+    .story-section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 40px;
+        background-color: #fff;
+    }
+    .story-text { flex: 1; min-width: 300px; }
+    .story-text h2 { font-size: 28px; margin-bottom: 15px;font-family:'Times New Roman', Times, serif; }
+    .story-text p { font-size: 18px; line-height: 1.6; margin-bottom: 15px; font-family:'Courier New', Courier, monospace;}
+    .story-image { flex: 1; min-width: 300px; }
+    .story-image img { max-width: 100%; border-radius: 8px; }
+
+    
+ 
+        /* Why Shop Section */
+        .why-shop-section {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+            color: #333;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-text {
+            color: #666;
+            font-size: 0.95rem;
+        }
+    /* warranty */
+    .warranty-section{
+        background-color: #171616;
+
+    }
+    .warranty-container h2 {
+      color: #9570e3;
+      font-size: 1.4rem;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      border-left: 5px solid #7d1a1a;
+      padding-left: 10px;
+    }
+    .warranty-container p, .container ul {
+      margin-bottom: 15px;
+      color: #f6f4f4;
+    }
+    .warranty-container ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+    a {
+      color: #8d1818;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      .container h2 {
+        font-size: 1.2rem;
+      }
+      section {
+        padding: 20px 5%;
+      }
+    }
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.2rem;
+      }
+      .container h2 {
+        font-size: 1rem;
+      }
+      body {
+        font-size: 14px;
+      }
+    }
+
+        /* Footer */
+       
+.footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 column layout */
+  gap: 50px;
+}
+    </style>
+</head>
+<body>
+     <!-- Navigation Bar -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+               <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2 group cursor-pointer">
+                <img src="./images/output-onlinepngtools.png" style="width: 100px; color: #0f0f0f;">
+            
+                    <span class="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent" style="text-decoration: none;">TechnoVA</span>
+                </a>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="shop.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all" style="text-decoration: none;">Shop</a>
+                    <a href="categories.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all" style="text-decoration: none;">Categories</a>
+                    <a href="brands.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all" style="text-decoration: none;">Brands</a>
+                    <a href="Accessories.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all" style="text-decoration: none;">Accessories</a>
+                    <a href="support.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all" style="text-decoration: none;">Support</a>
+                     <a href="contant.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all" style="text-decoration: none;">Contact</a>
+                </div>
+                
+                <!-- Right Icons -->
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-700 hover:text-gray-900 transition-all duration-300 hover:scale-110 transform">
+                        <i class='bx bx-search text-2xl'></i>
+                    </button>
+                    <a href="profile.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 hover:scale-110 transform">
+                        <i class='bx bx-user text-2xl'></i>
+                    </a>
+                    <a href="cart.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 hover:scale-110 transform relative">
+                        <i class='bx bx-cart text-2xl'></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </a>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobileMenuBtn" class="md:hidden text-gray-700 hover:text-gray-900 transition-transform duration-300 hover:scale-110">
+                        <i class='bx bx-menu text-2xl'></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+                <a href="shop.html" class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Shop</a>
+                <a href="categories.html" class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Categories</a>
+                <a href="brands.html" class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Brands</a>
+                <a href="Accessories.html" class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Accessories</a>
+                <a href="support.html" class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Support</a>
+                <a href="profile.html" class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Profile</a>
+                <a href="cart.html" class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Cart</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white relative overflow-hidden min-h-[700px] flex items-center">
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 py-20 w-full relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="text-center lg:text-left order-2 lg:order-1">
+                    <div class="inline-block mb-4 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20">
+                        ✨ New Arrivals Every Week
+                    </div>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                        Unlock Power &<br>
+                        <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Performance</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Shop the latest laptops and accessories at unbeatable prices!<br>
+                        Your tech upgrade starts here.
+                    </p>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <button class="bg-white text-black hover:bg-gray-100 px-8 py-4 rounded-xl transition-all duration-300 font-semibold transform hover:scale-105 shadow-xl hover:shadow-2xl">
+                            Shop Now →
+                        </button>
+                        <button class="glass-effect hover:bg-white/10 text-white px-8 py-4 rounded-xl transition-all duration-300 font-semibold transform hover:scale-105">
+                            Explore Deals
+                        </button>
+                    </div>
+                    
+                    <!-- Trust indicators -->
+                    <div class="mt-12 flex flex-wrap gap-8 justify-center lg:justify-start text-sm">
+                        <div class="flex items-center gap-2">
+                            <i class='bx bxs-star text-yellow-400 text-xl'></i>
+                            <span class="text-gray-300">4.9/5 Rating</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class='bx bxs-shield-alt-2 text-green-400 text-xl'></i>
+                            <span class="text-gray-300">Secure Checkout</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class='bx bxs-truck text-blue-400 text-xl'></i>
+                            <span class="text-gray-300">Free Shipping</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Image (Placeholder) -->
+                <div class="relative order-1 lg:order-2">
+                    <div class="relative float-animation">
+                        <!-- Placeholder for laptop image -->
+                        <div class="w-full h-[350px] md:h-[450px] lg:h-[550px] flex items-center justify-center">
+                            <img id="laptopImage" src="" alt="Laptop" class="w-full h-full object-contain hidden">
+                            <div id="laptopPlaceholder" class="w-full h-full flex items-center justify-center">
+                                <img src="./assets/images/shop/macbook-pro-14.jpg" alt="">
+                               <!--<i class='bx bx-bot text-9xl group-hover:rotate-12 transition-transform duration-300'></i>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section id="brands" class="brands-section">
+        <div class="container">
+            <h2 class="section-title"><b style="font-family: 'Times New Roman', Times, serif;"><b>Brands</b></h2>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-6 col-md-2 text-center mb-4">
+                    <img src="./images/acer.png" alt="Acer" class="brand-logo">
+                </div>
+                <div class="col-6 col-md-2 text-center mb-4">
+                    <img src="./images/dell.png" alt="Dell" class="brand-logo">
+                </div>
+                <div class="col-6 col-md-2 text-center mb-4">
+                    <img src="./images/asus.png" alt="ASUS" class="brand-logo">
+                </div>
+                <div class="col-6 col-md-2 text-center mb-4">
+                    <img src="./images/apple.png" alt="Apple" class="brand-logo">
+                </div>
+                <div class="col-6 col-md-2 text-center mb-4">
+                    <img src="./images/lenovo.png" alt="Lenovo" class="brand-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accessories Section -->
+    <section id="accessories" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-black mb-4">Premium Accessories</h2>
+                <p class="text-gray-600 text-lg">We offer competitive deals on all laptops and accessories</p>
+            </div>
+            
+            <!-- Accessories Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Mouse -->
+                <div class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div class="aspect-square flex items-center justify-center p-10 relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <img src="assets/images/premium/mouse.jpg" alt="Mouse" class="w-full h-full object-cover rounded-2xl relative z-10">
+                        <!-- Placeholder -->
+                        <!-- <i class='bx bx-mouse text-7xl text-gray-400 group-hover:text-gray-600 transition-all duration-500 group-hover:scale-110 relative z-10'></i> -->
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <p class="text-white font-semibold">Premium Mouse</p>
+                    </div>
+                </div>
+                
+                <!-- Headphones -->
+                <div class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-900 to-black hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div class="aspect-square flex items-center justify-center p-10 relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <img src="assets/images/premium/headphone.jpg" alt="Headphones" class="w-full h-full object-cover rounded-2xl relative z-10">
+                        <!-- Placeholder -->
+                        <!-- <i class='bx bx-headphone text-7xl text-gray-500 group-hover:text-white transition-all duration-500 group-hover:scale-110 relative z-10'></i> -->
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <p class="text-white font-semibold">Premium Headphones</p>
+                    </div>
+                </div>
+                
+                <!-- Laptop Bag -->
+                <div class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div class="aspect-square flex items-center justify-center p-10 relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <img src="assets/images/premium/laptop-bag.jpg" alt="Laptop Bag" class="w-full h-full object-cover rounded-2xl  relative z-10">
+                        <!-- Placeholder -->
+                        <!-- <i class='bx bx-shopping-bag text-7xl text-gray-400 group-hover:text-gray-600 transition-all duration-500 group-hover:scale-110 relative z-10'></i> -->
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <p class="text-white font-semibold">Laptop Bag</p>
+                    </div>
+                </div>
+                
+                <!-- Keyboard -->
+                <div class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-gray-800 to-gray-900 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div class="aspect-square flex items-center justify-center p-10 relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <img src="assets/images/premium/keyboard.jpg" alt="Keyboard" class="w-full h-full object-cover rounded-2xl relative z-10">
+                        <!-- Placeholder with Bootstrap Icons -->
+                        <!-- <i class="bi bi-keyboard text-7xl text-gray-400 group-hover:text-white transition-all duration-500 group-hover:scale-110 relative z-10"></i> -->
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <p class="text-white font-semibold">Mechanical Keyboard</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   <!-- About Us Section -->
+<section id="about" class="about-section" style="background-color: #000000;">
+    <div class="about-text">
+        <h1 style="text-align: center; color: #9570e3;">About Us</h1>
+        <p>At TechNova,we offer High Quality Products and Accessories.
+                    We are passionate about bringing you the latest and greatest
+                    technology to enhance your productivity, gaming, and entertainment
+                    experiences. Our carefully created selection of laptops,computers,
+                    and accessories ensures that you'll find the perfect tech solution
+                    for your needs and budget.</p>
+    </div>
+    <div class="about-image">
+        <img src="images/aboutus.jpg" alt="Team Photo">
+    </div>
+</section>
+
+<!-- Our Story Section -->
+<section class="story-section" style="background-color: #000000;">
+    <div class="story-text">
+        <h2 style="text-align: center; color: #9570e3;">Our Story</h2>
+        <p>Technova was founded by the groups of youth entrepreneur
+                    in 2022.At first,we have various difficulties to face,
+                    yet,along with the passion of our yougsters , we
+                    had successsfully created and developed this.We are so
+                    glad to help all of you.If all of you have something
+                    issue with our products,you can inform our team anytime.</p>
+        <p>Along the way, Technova expanded beyond marketing into a crafted, not cobbled suite of products that create the frictionless customer experience that buyers expect today. Expertly led by CEO ZERO Sagaing, TechNova uses its customer platform built on an AI-powered Smart CRM to help millions of scaling organizations grow better.</p>
+    </div>
+    <div class="story-image">
+
+        <img src="images/ourstory.jpg" alt="Our Story">
+    </div>
+</section>
+
+    <!-- Why Shop With Us Section -->
+    <section id="why-shop" class="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-black mb-4">Why Shop With Us?</h2>
+                <p class="text-gray-600 text-lg">Experience excellence in every purchase</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Best Prices Guaranteed -->
+                <div class="flex flex-col items-center text-center group cursor-pointer">
+                    <div class="relative mb-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                        <div class="relative w-24 h-24 bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-lg">
+                            <i class='bx bx-purchase-tag text-5xl bg-gradient-to-br from-blue-600 to-purple-600 bg-clip-text text-transparent'></i>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 group-hover:text-blue-600 transition-colors">Best Prices<br>Guaranteed</h3>
+                    <p class="text-gray-600 text-sm">Unbeatable deals on premium tech</p>
+                </div>
+                
+                <!-- Wide Selection -->
+                <div class="flex flex-col items-center text-center group cursor-pointer">
+                    <div class="relative mb-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                        <div class="relative w-24 h-24 bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-lg">
+                            <i class='bx bx-grid-alt text-5xl bg-gradient-to-br from-green-600 to-teal-600 bg-clip-text text-transparent'></i>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 group-hover:text-green-600 transition-colors">Wide Selection</h3>
+                    <p class="text-gray-600 text-sm">Thousands of products to choose from</p>
+                </div>
+                
+                <!-- Quality Assurance -->
+                <div class="flex flex-col items-center text-center group cursor-pointer">
+                    <div class="relative mb-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                        <div class="relative w-24 h-24 bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-lg">
+                            <i class='bx bx-shield text-5xl bg-gradient-to-br from-orange-600 to-red-600 bg-clip-text text-transparent'></i>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 group-hover:text-orange-600 transition-colors">Quality Assurance</h3>
+                    <p class="text-gray-600 text-sm">100% authentic products guaranteed</p>
+                </div>
+                
+                <!-- Expert Support -->
+                <div class="flex flex-col items-center text-center group cursor-pointer">
+                    <div class="relative mb-6">
+                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                        <div class="relative w-24 h-24 bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-lg">
+                            <i class='bx bx-user-voice text-5xl bg-gradient-to-br from-indigo-600 to-blue-600 bg-clip-text text-transparent'></i>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 group-hover:text-indigo-600 transition-colors">Expert Support</h3>
+                    <p class="text-gray-600 text-sm">24/7 customer service available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warranty section -->
+    <section id="warranty" class="warranty-section">
+        <h2 class="section-title">TechNova Warranty & Repair Services</h2>
+        <div class="warranty-container">
+            <h2>Product Warranty Registration</h2>
+            <p>Please fill up product information <a href="registration.html">here</a>.</p>
+            <h2>How to Check Warranty Status</h2>
+            <ul>
+                <li>Check your receipt for warranty period.</li>
+                <li>Contact TechNova's hotline.</li>
+                <li>Reach out to the respective merchant (TechNova's authorized retailer/distributor or online platform).</li>
+                </ul>
+            <h2>Where to Send for Repair Service?</h2>
+            <ul>
+                <li>If purchased from TechNova Store: check <a href="Service.html">service center location & hours</a>.</li>
+                <li>If purchased from other platforms: contact the respective merchant.</li>
+                </ul>
+            <h2>General Warranty Policy</h2>
+            <ul>
+                <li>Minimum 1-year carry-in warranty.</li>
+                <li>Battery covered for 1 year only.</li>
+                <li>On-site pickup/drop-off available every Wednesday & Saturday via 3PL.</li>
+                <li>Warranty excludes third-party damage and physical wear & tear.</li>
+            </ul>
+            <h2>Warranty Exclusions</h2>
+            <ul>
+                <li>Damage from accident, abuse, misuse, or improper storage.</li>
+                <li>External causes like power surges, environmental factors, or unauthorized repairs.</li>
+                <li>Alterations or modifications by unauthorized parties.</li>
+                <li>Damage from incompatible accessories or software issues.</li>
+                <li>Products not purchased from ABEX or its authorized resellers.</li>
+                <li>Shipping damage not caused by carrier.</li>
+                <li>System corruption, malware, or improper software settings.</li>
+            </ul>
+        </div>
+</section>
+
+ <!-- Footer Section -->
+    <footer class="bg-gradient-to-b from-gray-900 to-black text-gray-300 py-16 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-16">
+                <!-- Left Column - Newsletter -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-2 mb-6 group cursor-pointer">
+                        <i class='bx bx-bot text-4xl text-white group-hover:rotate-12 transition-transform duration-300'></i>
+                        <span class="text-2xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">TechnoVA</span>
+                    </div>
+                    <h3 class="text-white font-bold text-lg mb-4">Stay Ahead with Exclusive Deals & Tech Tips!</h3>
+                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+                        Subscribe to our newsletter and get the latest updates on new arrivals, flash sales, expert reviews, and handy tech advice — straight to your inbox!
+                    </p>
+                    
+                    <!-- Newsletter Form -->
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input 
+                            type="email" 
+                            placeholder="Enter your email address" 
+                            class="flex-1 px-5 py-3 bg-gray-800/50 backdrop-blur-sm text-white rounded-xl border border-gray-700 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 placeholder-gray-500 transition-all duration-300"
+                        >
+                        <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-8 py-3 rounded-xl transition-all duration-300 font-semibold whitespace-nowrap transform hover:scale-105 shadow-lg hover:shadow-2xl">
+                            Subscribe →
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Middle Column - Links -->
+                <div class="grid grid-cols-2 gap-8 lg:gap-12">
+                    <!-- Column 1 -->
+                    <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li><a href="shop.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Shop</a></li>
+                            <li><a href="categories.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Categories</a></li>
+                            <li><a href="brands.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Brands</a></li>
+                            <li><a href="Accessories.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Accessories</a></li>
+                           
+                        </ul>
+                    </div>
+                    
+                    <!-- Column 2 -->
+                    <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Company</h4>
+                        <ul class="space-y-3">
+                            <li><a href="about.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ About Us</a></li>
+                            <li><a href="contant.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Contact</a></li>
+                            <li><a href="warranty.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Privacy Policy</a></li>
+                            <li><a href="shipping info.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Terms of Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--column--3-->
+                 <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Others</h4>
+                        <ul class="space-y-3">
+                            <li><a href="support.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Supports</a></li>
+                            <li><a href="blog.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Blogs</a></li>
+                             <li><a href="partner.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Partners</a></li>
+                        </ul>
+                    </div>
+                
+                <!-- Right Column - Social -->
+                <div class="lg:col-span-1">
+                    <h4 class="text-white font-bold mb-4 text-lg">Follow Us</h4>
+                    <p class="text-sm text-gray-400 mb-6">Stay connected on social media</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/share/19kCEyhj9t/" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-purple-600 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-facebook text-2xl'></i>
+                        </a>
+                        <a href="https://www.instagram.com/the.apexsquad?igsh=ZnV5ZHpqbmZ3Zzd2" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-pink-600 hover:to-purple-600 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-instagram text-2xl'></i>
+                        </a>
+                        <a href="https://www.youtube.com/@TheApexSquad-s1w" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-900 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-youtube text-2xl'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="mt-16 pt-8 border-t border-gray-800 text-center">
+                <p class="text-sm text-gray-500">© 2025 TechnoVA. All rights reserved. Made with <span class="text-red-500">❤</span> for tech enthusiasts</p>
+            </div>
+        </div>
+    </footer>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

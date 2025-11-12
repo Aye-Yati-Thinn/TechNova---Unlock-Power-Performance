@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>service</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+
+        /*Service section*/
+        .servic-section {
+            background-color: rgb(249, 244, 244);
+            color: rgb(12, 12, 12);
+            text-align: center;
+            padding: 40px;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .servic-section h1 {
+            font-size: 40px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px gray;
+        }
+
+        .service-content {
+            padding-top: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .fir {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .one {
+            border: 2px solid white;
+            padding: 15px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px gray;
+        }
+
+        .one h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-family: Arial, sans-serif;
+        }
+
+        .one i {
+            color: green;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .one p {
+            line-height: 1.6;
+        }
+
+        .one:hover {
+            background-color: #808080;
+            color: black;
+            transition: 0.5s;
+            transform: scale(1.05);
+        }
+
+        .sec {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .two {
+            border: 2px solid white;
+            padding: 15px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px gray;
+            width: 50%;
+        }
+
+        .two h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-family: Arial, sans-serif;
+        }
+
+        .two i {
+            color: yellow;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .two p {
+            line-height: 1.6;
+        }
+
+        .two:hover {
+            background-color: #808080;
+            color: black;
+            transition: 0.5s;
+            transform: scale(1.05);
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .servic-section {
+                height: max-content;
+            }
+
+            .fir,
+            .sec {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            
+        }
+        /* responsive for laptop */
+            @media (min-width: 1024px) and (max-width: 1440px) {
+                .servic-section {
+                    width: 100%;
+                    height: auto;
+                    padding-bottom: 40px;
+                }
+                .fir, .sec {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                }
+                .one, .two {
+                    width: 30%;
+                    margin-bottom: 0;
+                    font-size: 16px;
+                }
+            }
+        :root {
+            --dark-bg: #1a1a1a;
+            --darker-bg: #0f0f0f;
+            --accent-color: #007bff;
+            --text-light: #ffffff;
+            --text-muted: #b0b0b0;
+        }
+
+    
+        /* Footer */
+        .footer {
+            background-color: var(--darker-bg);
+            padding: 40px 0 20px;
+            color: var(--text-light);
+        }
+
+        .footer-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .footer-description {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .footer-section-title {
+            color: var(--text-light);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--text-light);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .footer-bottom-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin: 0;
+        }
+        
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer {
+                text-align: center;
+            }
+        }
+        </style>
+        <body>
+             <!--Service Section-->
+    <section id="service" class="servic-section">
+        <h1>Service</h1>
+        <p class="service-content">We believe that shipping online should be easy and reliable
+            <br>
+            Our services are designed to make your experience be smooth
+            from the beginning to the end.
+        </p>
+        <div class="fir">
+            <div class="one">
+                <div class="i">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h2>Product Quality and Authenticity</h2>
+                <p>All our products are on approval. If you ever have a problem, our dedicated
+                    team is ready to help you with troubleshooting and for repairs.
+                </p>
+            </div>
+            <div class="one">
+                <i class="fa-solid fa-truck"></i>
+                <h2>Hassle-Free Delivery</h2>
+                <p> Get your new laptops and accessories delivered right in your doors.
+                    We ensure that every package is handled with care and arrives
+                    in perfect condition.
+                </p>
+            </div>
+            <div class="one">
+                <i class="fa-solid fa-wrench"></i>
+                <h2>After - Sales Suppot</h2>
+                <p>Our relationship doesn't end after you bought. We provide top-notch customer support
+                    and simple warranty processes to ensure you're always satisfied with your purchase.
+                </p>
+            </div>
+        </div>
+        <div class="sec">
+            <div class="two">
+                <div class="i">
+                    <i class="fa-solid fa-coins"></i>
+                    <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <h2>Payment Options</h2>
+                <p>Cash on Delivery (COD): This service is exclusively available for
+                    who orders within Yangon and Mandalay. Please inform us if you
+                    would like to use this option when placing your order. This service is not
+                    available for other regions.
+                </p>
+            </div>
+            <div class="two">
+                <i class="fa-solid fa-headphones"></i>
+                <h2>Tech Upgrades & Maintenance</h2>
+                <p>Looking to boost your performance? We can help you with future upgrades, from RAM and storage to
+                    graphics cards, ensuring your device stays fast and powerful.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-brand">
+                        <i class="fas fa-laptop me-2"></i>TechNova
+                    </div>
+                    <p class="footer-description">
+                        Your trusted partner for cutting-edge technology solutions. We provide premium laptops, computers, and accessories to power your digital life.
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6 mb-4">
+                    <h6 class="footer-section-title">Products</h6>
+                    <a href="brand.html" class="footer-link">Laptops</a>
+                    <a href="brand.html" class="footer-link">Desktops</a>
+                    <a href="brand.html" class="footer-link">Gaming PCs</a>
+                    <a href="Accessories.html" class="footer-link">Accessories</a>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6 mb-4">
+                    <h6 class="footer-section-title">Support</h6>
+                    <a href="helpcenter.html" class="footer-link">Help Center</a>
+                    <a href="contant.html" class="footer-link">Contact Us</a>
+                    <a href="warranty" class="footer-link">Warranty</a>
+                    <a href="return.html" class="footer-link">Returns</a>
+                    <a href="shipping info.html" class="footer-link">Shipping Info</a>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6 mb-4">
+                    <h6 class="footer-section-title">Company</h6>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="career.html" class="footer-link">Career</a>
+                    <a href="press.html" class="footer-link">Press</a>
+                    <a href="partner.html" class="footer-link">Partners</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6 mb-4">
+                    <h6 class="footer-section-title">Connect</h6>
+                    <a href="https://www.facebook.com/share/19kCEyhj9t/" class="footer-link">Facebook</a>
+                    <a href="#" class="footer-link">Twitter</a>
+                    <a href="https://www.instagram.com/the.apexsquad?igsh=ZnV5ZHpqbmZ3Zzd2" class="footer-link">Instagram</a>
+                    <a href="#" class="footer-link">LinkedIn</a>
+                    <a href="https://www.youtube.com/@TheApexSquad-s1w" class="footer-link">YouTube</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-bottom-text">© 2024 TechNova. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

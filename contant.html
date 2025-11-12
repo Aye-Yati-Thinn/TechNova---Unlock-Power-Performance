@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechNova - Unlock Power & Performance</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Boxicons CDN -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    :root {
+      --dark-bg: #1a1a1a;
+      --darker-bg: #0f0f0f;
+      --accent-color: #007bff;
+      --text-light: #ffffff;
+      --text-muted: #b0b0b0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* -------------------- Reservation + Contact Section -------------------- */
+    .reservation-contact {
+      padding: 80px 20px;
+    }
+
+    .reservation-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Reservation box */
+    .reservation-box {
+      background: #000;
+      padding: 40px;
+      border-radius: 10px;
+    }
+    .reservation-box h2 {
+      margin-bottom: 10px;
+    }
+    .reservation-box p {
+      margin-bottom: 20px;
+    }
+    .form-row {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .reservation-box input,
+    .reservation-box select,
+    .reservation-box textarea {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      background: #222;
+      color: #fff;
+      width: 100%;
+    }
+    .reservation-box textarea {
+      min-height: 100px;
+      resize: none;
+      margin-top: 15px;
+    }
+    .btn {
+      background: #e0b45d;
+      color: #000;
+      border: none;
+      padding: 14px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+      width: 100%;
+    }
+    .btn:hover {
+      background: #d19a3c;
+    }
+
+    /* Contact box */
+    .contact-box {
+      background: #000;
+      padding: 40px;
+      border-radius: 10px;
+    }
+    .contact-box h2 {
+      margin-bottom: 20px;
+    }
+    .contact-box h4 {
+      margin: 15px 0 5px;
+    }
+    .highlight {
+      color: #e0b45d;
+      font-weight: bold;
+    }
+
+    /* -------------------- Footer -------------------- */
+    .footer {
+      background-color: var(--darker-bg);
+      padding: 40px 0 20px;
+      color: var(--text-light);
+    }
+
+    .footer-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+
+    .footer-description {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .footer-section-title {
+      color: var(--text-light);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .footer-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-link:hover {
+      color: var(--text-light);
+    }
+
+    .myfooter-bottom {
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .myfooter-bottom-text {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    /* -------------------- Responsive Design -------------------- */
+    @media (max-width: 768px) {
+      /* Reservation Section */
+      .reservation-container {
+        grid-template-columns: 1fr;
+      }
+      .reservation-box,
+      .contact-box {
+        margin-bottom: 20px;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+    <!-- Reservation + Contact Section -->
+  <section class="reservation-contact">
+    <div class="reservation-container">
+      <!-- Reservation Form -->
+      <div class="reservation-box">
+        <h2>Online Reservation</h2>
+        <p>Shopping Now <span class="highlight">+95 9257 080 624</span> or fill out the order form</p>
+        <form>
+          <div class="form-row">
+            <input type="text" placeholder="Your Name" required>
+            <input type="text" placeholder="Phone Number" required>
+          </div>
+          <textarea placeholder="Message"></textarea>
+          <button type="submit" class="btn">Send</button>
+        </form>
+      </div>
+
+      <!-- Contact Box -->
+      <div class="contact-box">
+        <h2>Contact Us</h2>
+        <h4>Ordering</h4>
+        <p class="highlight">+95 9257 080 624</p>
+
+        <h4>Location</h4>
+        <p>Only Online<br>TechNova, Myanmar</p>
+
+        <h4>Open Time</h4>
+        <p>24 Hours</p>
+
+        <h4>Motto</h4>
+        <p>Spend Less, Smile more</p>
+      </div>
+    </div>
+  </section>
+
+ <!-- Footer Section -->
+    <footer class="bg-gradient-to-b from-gray-900 to-black text-gray-300 py-16 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-16">
+                <!-- Left Column - Newsletter -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-2 mb-6 group cursor-pointer">
+                        <i class='bx bx-bot text-4xl text-white group-hover:rotate-12 transition-transform duration-300'></i>
+                        <span class="text-2xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">TechnoVA</span>
+                    </div>
+                    <h3 class="text-white font-bold text-lg mb-4">Stay Ahead with Exclusive Deals & Tech Tips!</h3>
+                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+                        Subscribe to our newsletter and get the latest updates on new arrivals, flash sales, expert reviews, and handy tech advice — straight to your inbox!
+                    </p>
+                    
+                    <!-- Newsletter Form -->
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input 
+                            type="email" 
+                            placeholder="Enter your email address" 
+                            class="flex-1 px-5 py-3 bg-gray-800/50 backdrop-blur-sm text-white rounded-xl border border-gray-700 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 placeholder-gray-500 transition-all duration-300"
+                        >
+                        <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-8 py-3 rounded-xl transition-all duration-300 font-semibold whitespace-nowrap transform hover:scale-105 shadow-lg hover:shadow-2xl">
+                            Subscribe →
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Middle Column - Links -->
+                <div class="grid grid-cols-2 gap-8 lg:gap-12">
+                    <!-- Column 1 -->
+                    <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li><a href="shop.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Shop</a></li>
+                            <li><a href="categories.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Categories</a></li>
+                            <li><a href="brands.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Brands</a></li>
+                            <li><a href="Accessories.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Accessories</a></li>
+                           
+                        </ul>
+                    </div>
+                    
+                    <!-- Column 2 -->
+                    <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Company</h4>
+                        <ul class="space-y-3">
+                            <li><a href="about.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ About Us</a></li>
+                            <li><a href="contant.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Contact</a></li>
+                            <li><a href="warranty.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Privacy Policy</a></li>
+                            <li><a href="shipping info.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Terms of Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--column--3-->
+                 <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Others</h4>
+                        <ul class="space-y-3">
+                            <li><a href="support.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Supports</a></li>
+                            <li><a href="blog.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Blogs</a></li>
+                             <li><a href="partner.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Partners</a></li>
+                        </ul>
+                    </div>
+                
+                <!-- Right Column - Social -->
+                <div class="lg:col-span-1">
+                    <h4 class="text-white font-bold mb-4 text-lg">Follow Us</h4>
+                    <p class="text-sm text-gray-400 mb-6">Stay connected on social media</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/share/19kCEyhj9t/" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-purple-600 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-facebook text-2xl'></i>
+                        </a>
+                        <a href="https://www.instagram.com/the.apexsquad?igsh=ZnV5ZHpqbmZ3Zzd2" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-pink-600 hover:to-purple-600 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-instagram text-2xl'></i>
+                        </a>
+                        <a href="https://www.youtube.com/@TheApexSquad-s1w" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-900 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-youtube text-2xl'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="mt-16 pt-8 border-t border-gray-800 text-center">
+                <p class="text-sm text-gray-500">© 2025 TechnoVA. All rights reserved. Made with <span class="text-red-500">❤</span> for tech enthusiasts</p>
+            </div>
+        </div>
+    </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - TechnoVA</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Boxicons CDN -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* Custom styles */
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Remove tap highlight on mobile */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Modern glassmorphism effect */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Filter active state */
+        .filter-active {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2 group cursor-pointer">
+                    <img src="./images/output-onlinepngtools.png" style="width: 100px; color: #0f0f0f;">
+
+                    <span
+                        class="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">TechnoVA</span>
+                </a>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all">Home</a>
+                    <a href="shop.html"
+                        class="text-gray-900 font-semibold transition-all duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gray-900">Shop</a>
+                    <a href="categories.html"
+                        class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all">Categories</a>
+                    <a href="brands.html"
+                        class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all">Brands</a>
+                    <a href="accessories.html"
+                        class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all">Accessories</a>
+                    <a href="support.html"
+                        class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all">Support</a>
+                </div>
+
+                <!-- Right Icons -->
+                <div class="flex items-center space-x-4">
+                    <button
+                        class="text-gray-700 hover:text-gray-900 transition-all duration-300 hover:scale-110 transform">
+                        <i class='bx bx-search text-2xl'></i>
+                    </button>
+                    <a href="profile.html"
+                        class="text-gray-700 hover:text-gray-900 transition-all duration-300 hover:scale-110 transform">
+                        <i class='bx bx-user text-2xl'></i>
+                    </a>
+                    <a href="cart.html"
+                        class="text-gray-700 hover:text-gray-900 transition-all duration-300 hover:scale-110 transform relative">
+                        <i class='bx bx-cart text-2xl'></i>
+                        <span
+                            class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </a>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobileMenuBtn"
+                        class="md:hidden text-gray-700 hover:text-gray-900 transition-transform duration-300 hover:scale-110">
+                        <i class='bx bx-menu text-2xl'></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+                <a href="shop.html" class="block text-gray-900 font-semibold py-2 px-3 rounded-lg bg-gray-50">Shop</a>
+                <a href="categories.html"
+                    class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Categories</a>
+                <a href="brands.html"
+                    class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Brands</a>
+                <a href="accessories.html"
+                    class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Accessories</a>
+                <a href="support.html"
+                    class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Support</a>
+                <a href="profile.html"
+                    class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Profile</a>
+                <a href="cart.html"
+                    class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Cart</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-black via-gray-900 to-black text-white py-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div
+                class="inline-block mb-4 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20">
+                ✨ Premium Tech Collection
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                Explore Our <span
+                    class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Shop</span>
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                Discover the latest laptops, accessories, and tech gear from top brands at unbeatable prices
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Shop Content -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Sidebar Filters -->
+                <aside class="lg:w-64 flex-shrink-0">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 sticky top-24">
+                        <h3 class="text-xl font-bold mb-6 text-gray-900">Filters</h3>
+
+                        <!-- Category Filter -->
+                        <div class="mb-8">
+                            <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+                                <i class='bx bx-category text-xl mr-2'></i>
+                                Categories
+                            </h4>
+                            <div class="space-y-2">
+                                <button
+                                    class="filter-btn w-full text-left px-4 py-2 rounded-lg border border-gray-200 hover:border-gray-900 transition-all duration-300 text-sm filter-active">
+                                    All Products
+                                </button>
+                                <button
+                                    class="filter-btn w-full text-left px-4 py-2 rounded-lg border border-gray-200 hover:border-gray-900 transition-all duration-300 text-sm">
+                                    Laptops
+                                </button>
+                                <button
+                                    class="filter-btn w-full text-left px-4 py-2 rounded-lg border border-gray-200 hover:border-gray-900 transition-all duration-300 text-sm">
+                                    Accessories
+                                </button>
+                                <button
+                                    class="filter-btn w-full text-left px-4 py-2 rounded-lg border border-gray-200 hover:border-gray-900 transition-all duration-300 text-sm">
+                                    Peripherals
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Price Range -->
+                        <div class="mb-8">
+                            <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+                                <i class='bx bx-dollar text-xl mr-2'></i>
+                                Price Range
+                            </h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center cursor-pointer text-sm">
+                                    <input type="checkbox" class="mr-2 rounded">
+                                    <span>Under $500</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer text-sm">
+                                    <input type="checkbox" class="mr-2 rounded">
+                                    <span>$500 - $1000</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer text-sm">
+                                    <input type="checkbox" class="mr-2 rounded">
+                                    <span>$1000 - $1500</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer text-sm">
+                                    <input type="checkbox" class="mr-2 rounded">
+                                    <span>$1500+</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Brand Filter -->
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+                                <i class='bx bx-badge text-xl mr-2'></i>
+                                Brands
+                            </h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center cursor-pointer text-sm">
+                                    <input type="checkbox" class="mr-2 rounded">
+                                    <span>Apple</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer text-sm">
+                                    <input type="checkbox" class="mr-2 rounded">
+                                    <span>Dell</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer text-sm">
+                                    <input type="checkbox" class="mr-2 rounded">
+                                    <span>ASUS</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer text-sm">
+                                    <input type="checkbox" class="mr-2 rounded">
+                                    <span>Lenovo</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer text-sm">
+                                    <input type="checkbox" class="mr-2 rounded">
+                                    <span>Acer</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="flex-1">
+                    <!-- Sort & View Options -->
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+                        <div>
+                            <p class="text-gray-600"><span class="font-semibold text-gray-900">128</span> products found
+                            </p>
+                        </div>
+                        <div class="flex gap-3">
+                            <select
+                                class="px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-900 bg-white text-sm">
+                                <option>Sort by: Featured</option>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                                <option>Newest First</option>
+                                <option>Best Selling</option>
+                            </select>
+                            <div class="flex border border-gray-200 rounded-lg overflow-hidden">
+                                <button class="px-3 py-2 bg-gray-900 text-white">
+                                    <i class='bx bx-grid-alt'></i>
+                                </button>
+                                <button class="px-3 py-2 hover:bg-gray-50 transition">
+                                    <i class='bx bx-list-ul'></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div id="products-grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Product Card 1 -->
+                        <div
+                            class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                            <div class="relative aspect-square bg-gray-100 overflow-hidden">
+                                <div class="absolute top-3 right-3 z-10">
+                                    <button
+                                        class="w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-red-500 hover:text-white transition-all duration-300">
+                                        <i class='bx bx-heart text-xl'></i>
+                                    </button>
+                                </div>
+                                <div class="absolute top-3 left-3 z-10">
+                                    <span
+                                        class="px-3 py-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs font-semibold rounded-full">New</span>
+                                </div>
+                                <div class="w-full h-full flex items-center justify-center p-6">
+                                    <i
+                                        class='bx bx-laptop text-8xl text-gray-300 group-hover:scale-110 transition-transform duration-500'></i>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <div class="flex items-start justify-between mb-2">
+                                    <h3
+                                        class="font-bold text-gray-900 text-lg group-hover:text-blue-600 transition-colors">
+                                        MacBook Pro 14"</h3>
+                                    <div class="flex items-center gap-1 text-yellow-400 text-sm">
+                                        <i class='bx bxs-star'></i>
+                                        <span class="text-gray-600 font-medium">4.9</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-3">M2 Pro, 16GB RAM, 512GB SSD</p>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-2xl font-bold text-gray-900">$1,999</p>
+                                        <p class="text-sm text-gray-400 line-through">$2,299</p>
+                                    </div>
+                                    <button
+                                        class="px-4 py-2 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
+                                        <i class='bx bx-cart-add text-xl'></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 2 -->
+                        <div
+                            class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                            <div class="relative aspect-square bg-gray-100 overflow-hidden">
+                                <div class="absolute top-3 right-3 z-10">
+                                    <button
+                                        class="w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-red-500 hover:text-white transition-all duration-300">
+                                        <i class='bx bx-heart text-xl'></i>
+                                    </button>
+                                </div>
+                                <div class="absolute top-3 left-3 z-10">
+                                    <span
+                                        class="px-3 py-1 bg-red-500 text-white text-xs font-semibold rounded-full">-15%</span>
+                                </div>
+                                <div class="w-full h-full flex items-center justify-center p-6">
+                                    <i
+                                        class='bx bx-laptop text-8xl text-gray-300 group-hover:scale-110 transition-transform duration-500'></i>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <div class="flex items-start justify-between mb-2">
+                                    <h3
+                                        class="font-bold text-gray-900 text-lg group-hover:text-blue-600 transition-colors">
+                                        Dell XPS 15</h3>
+                                    <div class="flex items-center gap-1 text-yellow-400 text-sm">
+                                        <i class='bx bxs-star'></i>
+                                        <span class="text-gray-600 font-medium">4.8</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-3">Intel i7, 32GB RAM, 1TB SSD</p>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-2xl font-bold text-gray-900">$1,699</p>
+                                        <p class="text-sm text-gray-400 line-through">$1,999</p>
+                                    </div>
+                                    <button
+                                        class="px-4 py-2 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
+                                        <i class='bx bx-cart-add text-xl'></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 3 -->
+                        <div
+                            class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                            <div class="relative aspect-square bg-gray-100 overflow-hidden">
+                                <div class="absolute top-3 right-3 z-10">
+                                    <button
+                                        class="w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-red-500 hover:text-white transition-all duration-300">
+                                        <i class='bx bx-heart text-xl'></i>
+                                    </button>
+                                </div>
+                                <div class="w-full h-full flex items-center justify-center p-6">
+                                    <i
+                                        class='bx bx-laptop text-8xl text-gray-300 group-hover:scale-110 transition-transform duration-500'></i>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <div class="flex items-start justify-between mb-2">
+                                    <h3
+                                        class="font-bold text-gray-900 text-lg group-hover:text-blue-600 transition-colors">
+                                        ASUS ROG Strix</h3>
+                                    <div class="flex items-center gap-1 text-yellow-400 text-sm">
+                                        <i class='bx bxs-star'></i>
+                                        <span class="text-gray-600 font-medium">4.7</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-3">Ryzen 9, RTX 4070, 16GB RAM</p>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-2xl font-bold text-gray-900">$1,899</p>
+                                    </div>
+                                    <button
+                                        class="px-4 py-2 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
+                                        <i class='bx bx-cart-add text-xl'></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 4 -->
+                        <div
+                            class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                            <div class="relative aspect-square bg-gray-100 overflow-hidden">
+                                <div class="absolute top-3 right-3 z-10">
+                                    <button
+                                        class="w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-red-500 hover:text-white transition-all duration-300">
+                                        <i class='bx bx-heart text-xl'></i>
+                                    </button>
+                                </div>
+                                <div class="w-full h-full flex items-center justify-center p-6">
+                                    <i
+                                        class='bx bx-headphone text-8xl text-gray-300 group-hover:scale-110 transition-transform duration-500'></i>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <div class="flex items-start justify-between mb-2">
+                                    <h3
+                                        class="font-bold text-gray-900 text-lg group-hover:text-blue-600 transition-colors">
+                                        Premium Headphones</h3>
+                                    <div class="flex items-center gap-1 text-yellow-400 text-sm">
+                                        <i class='bx bxs-star'></i>
+                                        <span class="text-gray-600 font-medium">4.9</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-3">Noise Canceling, Wireless</p>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-2xl font-bold text-gray-900">$349</p>
+                                    </div>
+                                    <button
+                                        class="px-4 py-2 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
+                                        <i class='bx bx-cart-add text-xl'></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 5 -->
+                        <div
+                            class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                            <div class="relative aspect-square bg-gray-100 overflow-hidden">
+                                <div class="absolute top-3 right-3 z-10">
+                                    <button
+                                        class="w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-red-500 hover:text-white transition-all duration-300">
+                                        <i class='bx bx-heart text-xl'></i>
+                                    </button>
+                                </div>
+                                <div class="absolute top-3 left-3 z-10">
+                                    <span
+                                        class="px-3 py-1 bg-green-500 text-white text-xs font-semibold rounded-full">Best
+                                        Seller</span>
+                                </div>
+                                <div class="w-full h-full flex items-center justify-center p-6">
+                                    <i
+                                        class="bi bi-keyboard text-8xl text-gray-300 group-hover:scale-110 transition-transform duration-500"></i>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <div class="flex items-start justify-between mb-2">
+                                    <h3
+                                        class="font-bold text-gray-900 text-lg group-hover:text-blue-600 transition-colors">
+                                        Mechanical Keyboard</h3>
+                                    <div class="flex items-center gap-1 text-yellow-400 text-sm">
+                                        <i class='bx bxs-star'></i>
+                                        <span class="text-gray-600 font-medium">4.8</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-3">RGB, Cherry MX Switches</p>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-2xl font-bold text-gray-900">$159</p>
+                                    </div>
+                                    <button
+                                        class="px-4 py-2 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
+                                        <i class='bx bx-cart-add text-xl'></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 6 -->
+                        <div
+                            class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                            <div class="relative aspect-square bg-gray-100 overflow-hidden">
+                                <div class="absolute top-3 right-3 z-10">
+                                    <button
+                                        class="w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-red-500 hover:text-white transition-all duration-300">
+                                        <i class='bx bx-heart text-xl'></i>
+                                    </button>
+                                </div>
+                                <div class="w-full h-full flex items-center justify-center p-6">
+                                    <i
+                                        class='bx bx-mouse text-8xl text-gray-300 group-hover:scale-110 transition-transform duration-500'></i>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <div class="flex items-start justify-between mb-2">
+                                    <h3
+                                        class="font-bold text-gray-900 text-lg group-hover:text-blue-600 transition-colors">
+                                        Gaming Mouse</h3>
+                                    <div class="flex items-center gap-1 text-yellow-400 text-sm">
+                                        <i class='bx bxs-star'></i>
+                                        <span class="text-gray-600 font-medium">4.6</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-3">Wireless, 25K DPI Sensor</p>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-2xl font-bold text-gray-900">$89</p>
+                                    </div>
+                                    <button
+                                        class="px-4 py-2 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 transform hover:scale-105">
+                                        <i class='bx bx-cart-add text-xl'></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div id="pagination-container" class="mt-12 flex justify-center items-center gap-2">
+                        <button
+                            class="w-10 h-10 rounded-lg border border-gray-200 hover:border-gray-900 flex items-center justify-center transition-all duration-300">
+                            <i class='bx bx-chevron-left'></i>
+                        </button>
+                        <button class="w-10 h-10 rounded-lg bg-gray-900 text-white font-semibold">1</button>
+                        <button
+                            class="w-10 h-10 rounded-lg border border-gray-200 hover:border-gray-900 transition-all duration-300">2</button>
+                        <button
+                            class="w-10 h-10 rounded-lg border border-gray-200 hover:border-gray-900 transition-all duration-300">3</button>
+                        <button
+                            class="w-10 h-10 rounded-lg border border-gray-200 hover:border-gray-900 transition-all duration-300">4</button>
+                        <button
+                            class="w-10 h-10 rounded-lg border border-gray-200 hover:border-gray-900 flex items-center justify-center transition-all duration-300">
+                            <i class='bx bx-chevron-right'></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer Section -->
+    <footer class="bg-gradient-to-b from-gray-900 to-black text-gray-300 py-16 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-16">
+                <!-- Left Column - Newsletter -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-2 mb-6 group cursor-pointer">
+                        <i class='bx bx-bot text-4xl text-white group-hover:rotate-12 transition-transform duration-300'></i>
+                        <span class="text-2xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">TechnoVA</span>
+                    </div>
+                    <h3 class="text-white font-bold text-lg mb-4">Stay Ahead with Exclusive Deals & Tech Tips!</h3>
+                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+                        Subscribe to our newsletter and get the latest updates on new arrivals, flash sales, expert reviews, and handy tech advice — straight to your inbox!
+                    </p>
+                    
+                    <!-- Newsletter Form -->
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input 
+                            type="email" 
+                            placeholder="Enter your email address" 
+                            class="flex-1 px-5 py-3 bg-gray-800/50 backdrop-blur-sm text-white rounded-xl border border-gray-700 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 placeholder-gray-500 transition-all duration-300"
+                        >
+                        <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-8 py-3 rounded-xl transition-all duration-300 font-semibold whitespace-nowrap transform hover:scale-105 shadow-lg hover:shadow-2xl">
+                            Subscribe →
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Middle Column - Links -->
+                <div class="grid grid-cols-2 gap-8 lg:gap-12">
+                    <!-- Column 1 -->
+                    <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li><a href="shop.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Shop</a></li>
+                            <li><a href="categories.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Categories</a></li>
+                            <li><a href="brands.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Brands</a></li>
+                            <li><a href="Accessories.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Accessories</a></li>
+                           
+                        </ul>
+                    </div>
+                    
+                    <!-- Column 2 -->
+                    <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Company</h4>
+                        <ul class="space-y-3">
+                            <li><a href="about.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ About Us</a></li>
+                            <li><a href="contant.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Contact</a></li>
+                            <li><a href="warranty.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Privacy Policy</a></li>
+                            <li><a href="shipping info.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Terms of Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--column--3-->
+                 <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Others</h4>
+                        <ul class="space-y-3">
+                            <li><a href="support.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Supports</a></li>
+                            <li><a href="blog.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Blogs</a></li>
+                             <li><a href="partner.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Partners</a></li>
+                        </ul>
+                    </div>
+                
+                <!-- Right Column - Social -->
+                <div class="lg:col-span-1">
+                    <h4 class="text-white font-bold mb-4 text-lg">Follow Us</h4>
+                    <p class="text-sm text-gray-400 mb-6">Stay connected on social media</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/share/19kCEyhj9t/" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-purple-600 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-facebook text-2xl'></i>
+                        </a>
+                        <a href="https://www.instagram.com/the.apexsquad?igsh=ZnV5ZHpqbmZ3Zzd2" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-pink-600 hover:to-purple-600 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-instagram text-2xl'></i>
+                        </a>
+                        <a href="https://www.youtube.com/@TheApexSquad-s1w" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-900 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-youtube text-2xl'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="mt-16 pt-8 border-t border-gray-800 text-center">
+                <p class="text-sm text-gray-500">© 2025 TechnoVA. All rights reserved. Made with <span class="text-red-500">❤</span> for tech enthusiasts</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Sample product data
+        const products = [
+            /*Apple laptops....*/
+            { id: 1, name: 'MacBook Pro 14"', category: 'Laptops', brand: 'Apple', price: 1999, originalPrice: 3299, rating: 4.9, description: 'M2 Pro, 16GB RAM, 512GB SSD', image: 'assets/images/shop/macbook-pro-14.jpg', badge: 'New', badgeColor: 'from-blue-600 to-purple-600' },
+            { id: 2, name: 'MacBook Pro(13-inch,M2)', category: 'Laptops', brand: 'Apple', price: 1299, originalPrice: null, rating: 4.9, description: 'Apple M2 chip,8GB(base),configurable up to 24GB,256GB SSD(base),configurable up to 2TB', image: 'assets/images/shop/MacBook  Pro(13 inch,M2).jpg', badge: null, badgeColor: 'from-blue-600 to-purple-600' },
+            { id: 3, name: 'MacBook Air(13-inch,M2)', category: 'Laptops', brand: 'Apple', price: 1199, originalPrice: null, rating: 4.9, description: 'Apple M2 chip,8GB(base),configurable up to 24GB,256GB SSD(base),configurable up to 2TB', image: 'assets/images/shop/MacBook  Air(13 inch,M2).jpg', badge: null, badgeColor: 'from-blue-600 to-purple-600' },
+            { id: 4, name: 'MacBook Air(15-inch,M2)', category: 'Laptops', brand: 'Apple', price: 1299, originalPrice: null, rating: 4.9, description: 'Apple M2 chip,8GB(base),configurable up to 24GB,256GB SSD(base),configurable up to 2TB', image: 'assets/images/shop/MacBook  Air(15 inch,M2).jpg', badge: null, badgeColor: 'from-blue-600 to-purple-600' },
+            { id: 5, name: 'MacBook Pro(16-inch,M3 pro Max)', category: 'Laptops', brand: 'Apple', price: 3499, originalPrice: null, rating: 4.9, description: 'Apple M3 Pro or M3 Max chip,16GB(base),configurable up to 96GB,5126GB SSD(base),configurable up to 8TB', image: 'assets/images/shop/MacBook  Pro( 16-inch,M3 pro).jpg', badge: null, badgeColor: 'from-blue-600 to-purple-600' },
+            { id: 6, name: 'MacBook Air(15-inch,M4)', category: 'Laptops', brand: 'Apple', price: 1049, originalPrice: null, rating: 4.9, description: 'Apple M4 chip, 8GB(base),configurable up to 24GB,256GB SSD(base),configurable up to 2TB', image: 'assets/images/shop/MacBook  Air(15 inch,M4).jpg', badge: null, badgeColor: 'from-blue-600 to-purple-600' },
+            { id: 7, name: 'MacBook Pro(16-inch,M4 Pro Max)', category: 'Laptops', brand: 'Apple', price: 2134, originalPrice: null, rating: 4.9, description: 'Apple M4 Pro or M4 Max chip,16GB(base),configurable up to 96GB, 512GB SSD(base),configurable up to 8TB', image: 'assets/images/shop/MacBook  Pro( 16-inch,M4 pro).jpg', badge: null, badgeColor: 'from-blue-600 to-purple-600' },
+
+            /*ASUS laptops...*/
+            { id: 8, name: 'ASUS ROG Strix', category: 'Laptops', brand: 'ASUS', price: 1899, originalPrice: null, rating: 4.7, description: 'Ryzen 9, RTX 4070, 16GB RAM', image: 'assets/images/shop/asus-rog-strix.jpg', badge: null, badgeColor: null },
+            { id: 9, name: 'ASUS ProArt P16 H7606 (2024)', category: 'Laptops', brand: 'ASUS', price: 2599.99, originalPrice: null, rating: 4.7, description: 'AMD Ryzen AI 9 HX 370,RTX 5070,32GB RAM,2TB SSD', image: 'assets/images/shop/ASUS ProArt P16 H7606 (2024).jpg', badge: null, badgeColor: null },
+            { id: 10, name: 'ASUS TUFGaming A15(2024)', category: 'Laptops', brand: 'ASUS', price: 1811.99, originalPrice: null, rating: 4.7, description: 'AMD Ryzen 9 8945HS,NVIDIA GeForce RTX 4060, 16GB RAM, 512GB SSD', image: 'assets/images/shop/ASUS TUF Gaming A15 (2024).jpg', badge: null, badgeColor: null },
+            { id: 11, name: 'ASUS ZenBook 14 14X OLED', category: 'Laptops', brand: 'ASUS', price: 1499.99, originalPrice: null, rating: 4.6, description: 'Intel Core i7-13700H, 16GB RAM , 512GB SSD', image: 'assets/images/shop/Asus ZenBook 14 14X OLED.jpg', badge: null, badgeColor: null },
+            { id: 12, name: 'ASUS Vivobook 14 (X1407QA)', category: 'Laptops', brand: 'ASUS', price: 700, originalPrice: null, rating: 4.5, description: 'Qualcomm Snapdragon X1-26-100.8cores, 16GB RAM, 512GB NVMe PCIe4.0 M.2SSD', image: 'assets/images/shop/ASUS Vivobook 14 (X1407QA).jpg', badge: null, badgeColor: null },
+            { id: 13, name: 'ASUS Chromebook Plus CX34', category: 'Laptops', brand: 'ASUS', price: 499, originalPrice: null, rating: 4.4, description: ' Intel® Core™ i5-1335U,8GB LPDDR5 RAM,128GB UFS', image: 'assets/images/shop/ASUS Chromebook Plus CX34 .jpg', badge: null, badgeColor: null },
+            { id: 14, name: 'ASUS Vivobook Go 15.6 (Model: E1504FA-AS54)', category: 'Laptops', brand: 'ASUS', price: 329.99, originalPrice: null, rating: 4.3, description: 'AMD Ryzen™ 5 7520U ,8GB LPDDR5 RAM ,512GB M.2 NVMe PCIe 3.0 SSD', image: 'assets/images/shop/ASUS Vivobook Go 15.6.jpg', badge: null, badgeColor: null },
+            /*lenovo laptops...*/
+            { id: 15, name: 'ThinkPad X1', category: 'Laptops', brand: 'Lenovo', price: 1499, originalPrice: 1699, rating: 4.7, description: 'Intel i7, 16GB RAM, 512GB SSD', image: 'assets/images/shop/thinkpad-x1.jpg', badge: '-12%', badgeColor: 'bg-red-500' },
+            { id: 16, name: 'Lenovo Legion Slim 5(2024)', category: 'Laptops', brand: 'Lenovo', price: 1584, originalPrice: 1800, rating: 4.7, description: 'AMD Ryzen 9 7945HX,NVIDIA GeForceRTX 4070,32GB RAM,2TB SSD', image: 'assets/images/shop/Lenovo Legion Slim 5.jpg', badge: '-12%', badgeColor: 'bg-red-500' },
+            { id: 17, name: 'Lenovo IdeaPad  3(2024)', category: 'Laptops', brand: 'Lenovo', price: 449.99, originalPrice: 499.99, rating: 4.5, description: 'Intel Core i3-1115G4, 8GB RAM,256GB SSD', image: 'assets/images/shop/Lenovo IdeaPad 3.jpg', badge: '-10%', badgeColor: 'bg-red-500' },
+            { id: 18, name: 'Lenovo Legion 5 Pro', category: 'Gaming Laptops', brand: 'Lenovo', price: 1319.12, originalPrice: 1499, rating: 4.7, description: 'AMD Ryzen 7 5800H, NVIDIA RTX 3060, 16GB RAM', image: 'assets/images/shop/Lenovo Legion 5 Pro (2024) .jpg', badge: '-12%', badgeColor: 'bg-red-500' },
+            { id: 19, name: 'Lenovo V 330-141 KB(2018)', category: 'Laptops', brand: 'Lenovo', price: 217.80, originalPrice: 242, rating: 4.3, description: 'Intel Core i5 8th Gen,8GB RAM,256GB SSD ,14"Intel UHD Graphics 4GB', image: 'assets/images/shop/Lenovo V 330-141 KB(2018).jpg', badge: '-10%', badgeColor: 'bg-red-500' },
+            { id: 20, name: 'Lenovo Yoga 7 2-in-1 14AHP9(2024)', category: 'Laptops', brand: 'Lenovo', price: 704, originalPrice: 799.99, rating: 4.6, description: 'AMD Ryzen 7 8840HS,16GB LPDDR5 RAM,1TB SSD', image: 'assets/images/shop/Lenovo Yoga 7 2-in-1 14AHP9(2024).jpg', badge: '-12%', badgeColor: 'bg-red-500' },
+            { id: 21, name: 'Lenovo LOQ 15IRH8', category: 'Gaming Laptops', brand: 'Lenovo', price: 704, originalPrice: 799.99, rating: 4.5, description: 'Intel Core i5-13420H,32GB RAM,2TB PCIe Gen4 NVMe SSD', image: 'assets/images/shop/Lenovo LOQ 15IRH8.jpg', badge: '-12%', badgeColor: 'bg-red-500' },
+            { id: 22, name: 'Lenovo 100e ChromeBook Gen4', category: 'Laptops', brand: 'Lenovo', price: 223.19, originalPrice: 247.99, rating: 4.7, description: 'Intel N100 quad-core,4GB LPDDR5 RAM, 32GB eMMC', image: 'assets/images/shop/Lenovo 100e ChromeBook Gen4.jpg', badge: '-10%', badgeColor: 'bg-red-500' },
+            /*Dell laptops...*/
+            { id: 23, name: 'XPS 16 Laptop(Model : 9640)', category: 'Laptops', brand: 'Dell', price: 2005.99, originalPrice: 2359.99, rating: 4.8, description: 'Intel® Core™ Ultra 9 185H (16 cores, up to 5.1 GHz),32GB, LPDDR5X, 7467MT/s.1 TB, M.2,PCIe NVMe , SSD', image: 'assets/images/shop/XPS 16 Laptop.jpg', badge: '-15%', badgeColor: 'bg-red-500' },
+            { id: 24, name: 'Dell XPS 15', category: 'Laptops', brand: 'Dell', price: 1699, originalPrice: 1999, rating: 4.8, description: 'Intel i7, 32GB RAM, 1TB SSD', image: 'assets/images/shop/dell-xps-15.jpg', badge: '-15%', badgeColor: 'bg-red-500' },
+            { id: 25, name: 'Alienware 16 Area-51 Gaming Laptop(Model-AA16250)', category: 'Gaming Laptops', brand: 'Dell', price: 2719.99, originalPrice: 3199.99, rating: 4.8, description: 'Intel® Core Ultra 9 processor 275HX,32GB, 2x16GB, DDR5, 6400MT/s,1TB NVMe M.2 PCIe Gen4 SSD', image: 'assets/images/shop/Alienware 16 Area-51 Gaming Laptop.jpg', badge: '-15%', badgeColor: 'bg-red-500' },
+            { id: 26, name: 'Alienware 16X Aurora Gaming Laptop(Model: AC16251)', category: 'Gaming Laptops', brand: 'Dell', price: 1317.49, originalPrice: 1549.99, rating: 4.7, description: 'Intel® Core™ Ultra 7 Processor 255HX ,16GB, 2x8GB, DDR5, 5600 MT/s,1TB M.2 PCIe NVMe SSD', image: 'assets/images/shop/Alienware 16X Aurora Gaming Laptop.jpg', badge: '-15%', badgeColor: 'bg-red-500' },
+            { id: 27, name: 'Dell Inspiron 16  plus Laptop (Model:  7640)', category: ' Laptops', brand: 'Dell', price: 679.99, originalPrice: 799.99, rating: 4.6, description: ' Intel® Core™ Ultra 9 185H ,  16GB, 2x8GB, LPDDR5X, 6400MT/s onboard,  512 GB, M.2, PCIe NVMe, SSD', image: 'assets/images/shop/Dell Inspiron 16  plus Laptop .jpg', badge: '-15%', badgeColor: 'bg-red-500' },
+            { id: 28, name: 'Dell Latitude 3440', category: ' Laptops', brand: 'Dell', price: 553.71, originalPrice: 651.42, rating: 4.4, description: '13th Gen Intel® Core™ i5-1335U, 16 GB: LPDDR5, 4800 MT/s (onboard), 256 GB, M.2 2230, PCIe NVMe, SSD, Class 35', image: 'assets/images/shop/Dell Latitude 3440.jpg', badge: '-15%', badgeColor: 'bg-red-500' },
+            { id: 29, name: 'Latitude 3140 Laptop or 2-in-1', category: 'Laptops', brand: 'Dell', price: 278.67, originalPrice: 327.85, rating: 4.3, description: 'Intel® N100 (6 MB cache, 4 cores, 4 threads),4 GB: 1 x 4 GB, LPDDR5X, 4800 MT/s,64 GB eMMC', image: 'assets/images/shop/Latitude 3140 Laptop or 2-in-1.jpg', badge: '-15%', badgeColor: 'bg-red-500' },
+            /*Acer laptops....*/
+            { id: 30, name: 'Predator Helios 300', category: 'Gaming Laptops', brand: 'Acer', price: 4664.65, originalPrice: null, rating: 4.5, description: 'PH315-55-99K5(i9-12th Gen)', image: 'assets/images/shop/Acer Predator Helios 300.jpg', badge: null, badgeColor: null },
+            { id: 31, name: 'Predator Helios 16 PH', category: 'Gaming Laptops', brand: 'Acer', price: 3499, originalPrice: null, rating: 4.5, description: '16-71-9587(i9-13th Gen)', image: 'assets/images/shop/Acer Predator Helios 16PH.jpg', badge: null, badgeColor: null },
+            { id: 32, name: 'Aspire lite AL', category: ' Laptops', brand: 'Acer', price: 1186.74, originalPrice: null, rating: 4.5, description: 'Intel Core i5-1334U(10cores,up to 4.60 GHz),16GB RAM,512GB PCIe NVMe SSD', image: 'assets/images/shop/Acer Aspire lite AL.jpg', badge: null, badgeColor: null },
+            { id: 33, name: 'Aspire 3A315-58-37U9', category: ' Laptops', brand: 'Acer', price: 571, originalPrice: null, rating: 4.5, description: 'Intel Core i3-1115G4(11th Gen),8GB RAM,512GB SSD', image: 'assets/images/shop/Aspire 3A315-58-37U9.jpg', badge: null, badgeColor: null },
+            { id: 34, name: 'Chromebook 311 C733', category: ' Laptops', brand: 'Acer', price: 428.78, originalPrice: null, rating: 4.5, description: 'Intel Celeron N4020,4GB RAM,32GBeMMC', image: 'assets/images/shop/Acer Chromebook 311 C733.jpg', badge: null, badgeColor: null },
+            { id: 35, name: 'Aspire 3 A314-36P-3772', category: ' Laptops', brand: 'Acer', price: 575, originalPrice: null, rating: 4.5, description: 'Intel Core i3-N305,8GB RAM,128GB PCIe NVMe SSD', image: 'assets/images/shop/Acer Aspire 3 A314-36P-3772 .jpg', badge: null, badgeColor: null },
+            { id: 36, name: 'Acer Extensa 15 Ex 215-31', category: 'Laptops', brand: 'Acer', price: 452.81, originalPrice: null, rating: 4.5, description: 'Intel Celeron N4020,4GB DDR4 RAM,256GB SSD,', image: 'assets/images/shop/Acer Extensa 15 Ex 215-31.jpg', badge: null, badgeColor: null },
+            /*Accessories and Peripherals...*/
+            { id: 37, name: 'USB-C Docking Station', category: 'Accessories', brand: 'Dell', price: 199, originalPrice: null, rating: 4.5, description: 'Dual 4K Display, 10 Ports', image: 'assets/images/premium/USB C Docking station.jpg', badge: null, badgeColor: null },
+            { id: 38, name: 'Acer Vero ECO Protective Sleeve', category: 'Accessories', brand: 'Acer', price: 39, originalPrice: null, rating: 4.5, description: 'Water-resistant, 15.6"', image: 'assets/images/shop/sleeve.jpg', badge: null, badgeColor: null },
+            { id: 39, name: 'Gaming Headset', category: 'Accessories', brand: 'ASUS', price: 129, originalPrice: null, rating: 4.7, description: 'Surround Sound, RGB Lighting', image: 'assets/images/premium/Gaming headset.jpg', badge: null, badgeColor: null },
+            { id: 40, name: 'Premium Headphones', category: 'Accessories', brand: 'Apple', price: 349, originalPrice: null, rating: 4.9, description: 'Noise Canceling, Wireless', image: 'assets/images/shop/headphone.jpg', badge: null, badgeColor: null },
+            { id: 41, name: 'Wireless Earbuds', category: 'Accessories', brand: 'Apple', price: 249, originalPrice: null, rating: 4.8, description: 'Active Noise Cancellation', image: 'assets/images/shop/wireless-earbud.jpg', badge: 'New', badgeColor: 'from-blue-600 to-purple-600' },
+            { id: 42, name: 'USB-C Hub', category: 'Accessories', brand: 'Dell', price: 79, originalPrice: 99, rating: 4.6, description: '7-in-1 Multiport Adapter', image: 'assets/images/shop/usb-c-hub.jpg', badge: '-20%', badgeColor: 'bg-red-500' },
+           /*laptop bags*/
+            { id: 43, name: 'TECOOL laptop Sleeve', category: 'Accessories', brand: 'Apple', price: 15.20, originalPrice: null, rating: 4.6, description: 'Polyester fabric with shockproof foam,13"', image: 'assets/images/shop/TECOOL Laptop Sleeve.jpg', badge: null, badgeColor: null },
+            { id: 44, name: 'Acer NP.BAG1A.189', category: 'Accessories', brand: 'Acer', price: 29.99, originalPrice: null, rating: 4.4, description: 'Water-resietant outer material,15.6"', image: 'assets/images/shop/Acer NP.BAG1A.189.jpg', badge: null, badgeColor: null },
+            { id: 45, name: 'Tragus Rolling Laptops Bag', category: 'Accessories', brand: 'Apple', price: 79.99, originalPrice: null, rating: 4.7, description: '1200D water-resistant polyester,16"', image: 'assets/images/shop/Targus Rolling laptop bag.jpg', badge: null, badgeColor: null },
+            { id: 46, name: 'Lenovo Casual Toploader T210', category: 'Accessories', brand: 'Lenovo', price: 69.99, originalPrice: null, rating: 4.7, description: 'High-quality,durable and water-repellent fabric,15.6"', image: 'assets/images/shop/Lenovo Casual Toploader T210.jpg', badge: null, badgeColor: null },
+            { id: 47, name: 'ROG SLASH Sing Bag 2.0', category: 'Accessories', brand: 'ASUS', price:69.99, originalPrice: null, rating: 4.7, description: 'Water-Repllent materials,adjustable shoulder strap,Fidlock magnetic buckle', image: 'assets/images/shop/ROG SLASH Sing Bag 2.0.jpg', badge: null, badgeColor: null },
+            { id: 48, name: 'Dell Canvas Messenger Laptop Bag', category: 'Accessories', brand: 'Dell', price:29.99, originalPrice: null, rating: 4.5, description: 'Eco-friendly materials with weather-resistant features,15.6"', image: 'assets/images/shop/Dell Canvas Messenger laptop Bag.jpg', badge: null, badgeColor: null },
+            { id: 49, name: 'Dell Pro Backpack 17(PO1720P)', category: 'Accessories', brand: 'Dell', price:85 , originalPrice: null, rating: 4.7, description: 'Water-resistant&lightweigth design, 17"', image: 'assets/images/shop/Dell Pro Backpack 17 (P01720P).jpg', badge: null, badgeColor: null },
+            { id: 50, name: 'ROG SLASH Hard Case Luggage(BT3700)', category: 'Accessories', brand: 'ASUS', price: 232, originalPrice: null, rating: 4.9, description: '100% polycarbonate shell with an aluminum frame & reinforced corners', image: 'assets/images/shop/ROG SLASH HARD CASE LUGGAGE.jpg', badge: null, badgeColor: null },
+          
+           /* chargers*/
+            { id: 51, name: 'Wireless Charger', category: 'Accessories', brand: 'Apple', price: 79, originalPrice: null, rating: 4.6, description: 'Fast Charging, Qi Certified', image: 'assets/images/premium/Wireless charger.jpg', badge: null, badgeColor: null },
+            { id: 52, name: 'DC Barrel Connector Charger', category: 'Accessories', brand: 'Dell', price: 35, originalPrice: null, rating: 4.5, description: '65W,compatible with Vostro', image: 'assets/images/shop/Dell DC Barrel Charger.jpg', badge: null, badgeColor: null },
+            { id: 53, name: 'USB-C Charger', category: 'Accessories', brand: 'Apple', price: 79, originalPrice: null, rating: 4.8, description: 'F30W,67W,96W PD,fast charging', image: 'assets/images/shop/Apple USB-C chargers.jpg', badge: null, badgeColor: null },
+            { id: 54, name: 'MagSafe Charger', category: 'Accessories', brand: 'Apple', price: 99, originalPrice: null, rating: 4.9, description: '140W Fast Charging,magnetic connection', image: 'assets/images/shop/MagSafe Charger.jpg', badge: null, badgeColor: null },
+            { id: 55, name: 'Universal Laptop Chargers', category: 'Accessories', brand: 'Lenovo', price: 59, originalPrice: null, rating: 4.5, description: 'Adjustable tips,90 W,compatible with multiple brands', image: 'assets/images/shop/Universal Laptop chargers.jpg', badge: null, badgeColor: null },
+           /*headsets, headphones , earbuds & USB stick*/
+            { id: 56, name: 'Wireless Headset', category: 'Accessories', brand: 'Dell', price: 99, originalPrice: null, rating: 4.6, description: 'Bluetooth,Noise Cancelling', image: 'assets/images/shop/Dell Wireless Headset.jpg', badge: null, badgeColor: null },
+            { id: 57, name: 'USB-C Headset', category: 'Accessories', brand: 'Apple', price: 199, originalPrice: null, rating: 4.8, description: 'High Fidelity Audio,USB-C connection', image: 'assets/images/shop/Apple USB-C Headset.jpg', badge: null, badgeColor: null },
+            { id: 58, name: 'Over-Ear Headset', category: 'Accessories', brand: 'Lenovo', price: 89, originalPrice: null, rating: 4.7, description: 'Comfortable fit,Long battery life', image:'assets/images/shop/Lenovo Over-Ear Headphones.jpg' ,badge: null, badgeColor: null },
+            { id: 59, name: 'In-Ear Headset', category: 'Accessories', brand: 'Acer', price: 49, originalPrice: null, rating: 4.5, description:'Compact design & good sound quality', image:'assets/images/shop/Acer In-Ear Headsets.jpg' ,badge:null,badgeColor:null},
+            { id: 60, name:'Noise Cancelling Headset', category:'Accessories', brand:'ASUS' ,price :199 ,originalPrice:null,rating :4.8 ,description:'Active Noise Cancellation & Comfortable fit' ,image:'assets/images/shop/ASUS Noise Cancelling Headphones.jpg' ,badge:null,badgeColor:null},
+            { id :61,name:'Premium Audio Headset' ,category:'Accessories' ,brand:'Apple' ,price :299 ,originalPrice:null,rating :4.9 ,description :'High-end audio quality & Comfortable fit' ,image :'assets/images/shop/Apple Premium Audio Headset.jpg' ,badge :null,badgeColor :null},
+            { id :62,name:'Compact Travel Headphone' ,category:'Accessories' ,brand:'ASUS' ,price :89 ,originalPrice:null,rating :4.5 ,description :'Foldable design & Good sound quality' ,image :'assets/images/shop/ASUS Compact Travel Headphones.jpg' ,badge :null,badgeColor :null},
+            { id :63,name:'Wireless Bluetooth Earphone' ,category:'Accessories' ,brand:'Lenovo' ,price :60,originalPrice:null,rating :4.5 ,description :'GM2 Pro, Bluetooth 5.3,lightweight fit' ,image :'assets/images/shop/Wireless Bluetooth Earphone.jpg' ,badge :null,badgeColor :null},
+            { id: 64, name: 'Wireless Gaming EarBuds', category: 'Accessories', brand: 'ASUS', price: 122.82, originalPrice: null, rating: 4.8, description: 'Low-latency for gaming ', image: 'assets/images/shop/Wireless gaming Earbuds.jpg', badge: null, badgeColor: 'from-blue-600 to-purple-600' },
+            { id: 65, name: 'Wired Headset', category: 'Accessories', brand: 'Dell', price: 84.99, originalPrice: null, rating: 4.7, description: 'AI Noise-Canceling Microphone', image: 'assets/images/shop/Dell Wired Headset.jpg', badge: null, badgeColor: 'from-blue-600 to-purple-600' },
+            { id: 66, name: 'Sports workout Earbuds', category: 'Accessories', brand: 'Dell', price: 23.99, originalPrice: null, rating: 4.3, description: 'Bluetooth 5.3,IPX6 Waterproof', image: 'assets/images/shop/Sports workout earbuds.jpg', badge: null, badgeColor: 'from-blue-600 to-purple-600' },
+            { id: 67, name: 'Lenovo Wireless Earphone', category: 'Accessories', brand: 'lenovo', price: 45, originalPrice: null, rating: 4.4, description: 'Bluetooth 5.4,long battery life', image: 'assets/images/shop/In-Ear earbuds.jpg', badge: null, badgeColor: 'from-blue-600 to-purple-600'},
+            { id: 68, name: 'Acer Wireless Earbuds', category: 'Accessories', brand: 'Acer', price: 16.99, originalPrice: null, rating: 4.5, description: '8mm drivers for deep bass & clear song', image: 'assets/images/shop/Acer Wireless Earbuds.jpg', badge: null, badgeColor: 'from-blue-600 to-purple-600' },
+            { id: 69, name: 'Dell USB Memory Upgrade AB135418', category: 'Accessories', brand: 'Dell', price: 34.99, originalPrice: null, rating: 4.4, description: ' USB Type-A and USB Type-C ports,Read Speed 100MBs & Write speed 15MBs ', image: 'assets/images/shop/Dell USB Memory Upgrade AB135418.jpg', badge: null, badgeColor: null },
+            { id: 70, name: 'Acer 1TB USB 3.2 Gen 1UM310 Pen Drive', category: 'Accessories', brand: 'Acer', price: 72.99, originalPrice: null, rating: 4.6, description: ' USB Type-A,Read speed 120MBs & Write speed 100MBs ', image: 'assets/images/shop/Acer 1TB USB 3.2 Gen 1UM310 Pen Drive.jpg', badge: null, badgeColor: null },
+            { id: 71, name: 'Lenovo 2TB USB 3.0 Flash Drive', category: 'Accessories', brand: 'lenovo', price: 13.99, originalPrice: null, rating: 4.4, description: 'USB 3.0,Max Read speed up to 500MBs ', image: 'assets/images/shop/Lenovo 2TB USB 3.0 Flash Drive.jpg', badge: null, badgeColor: null },
+        
+            /*Peripherals--*/
+            /*Monitors*/
+            { id: 72, name: 'Monitor 27"', category: 'Peripherals', brand: 'ASUS', price: 399, originalPrice: null, rating: 4.7, description: '4K UHD, 144Hz, IPS', image: 'assets/images/shop/monitor.jpg', badge: null, badgeColor: null },
+            { id: 73, name: 'Dell UltraSharp U2720Q', category: 'Peripherals', brand: 'Dell', price: 409.99, originalPrice: null, rating: 4.8, description: '27", 4K UHD, USB-C', image: 'assets/images/shop/dell-ultrasharp-u2720q.jpg', badge: null, badgeColor: null },
+            { id: 74, name: 'ASUS ProArt PA32UCX', category: 'Peripherals', brand: 'ASUS', price:1799.99 , originalPrice: null, rating: 4.9, description: '32", 4K HDR, Thunderbolt 3', image: 'assets/images/shop/ASUS ProArt PA32UCX.jpg', badge: null, badgeColor: null },
+            { id: 75, name: 'Acer Predator X34P', category: 'Peripherals', brand: 'Acer', price: 199.99, originalPrice: null, rating: 4.8, description: '34" ,Curved Gaming Monitor with G-Sync', image: 'assets/images/shop/acer-predator-x34p.jpg', badge: null, badgeColor: null },
+            { id: 76, name: 'Lenovo Legion Y25-25', category: 'Peripherals', brand: 'Lenovo', price: 799.99, originalPrice: null, rating: 4.8, description: '24.5",Full HD,HDMI Display Port ', image: 'assets/images/shop/Lenovo Legion Y25-25.jpg', badge: null, badgeColor: null },
+            { id: 77, name: 'LG UltraFine 5k', category: 'Peripherals', brand: 'Apple', price:1299.99 , originalPrice: null, rating: 4.8, description: '27",5K ,Thunderbolt 3 Port ', image: 'assets/images/shop/LG UltraFine 5k.jpg', badge: null, badgeColor: null },
+            { id: 78, name: 'Acer Concept D CP7', category: 'Peripherals', brand: 'Acer', price: 2199, originalPrice: null, rating: 4.8, description: '27",4K UHD,HDMI;lacks USB-C', image: 'assets/images/shop/Acer Concept D CP7.jpg', badge: null, badgeColor: null },
+            { id: 79, name: 'ThinkVision P27h', category: 'Peripherals', brand: 'Lenovo', price: 342.19, originalPrice: null, rating: 4.5, description: '27",QHD , USB-C 3.1 Gen', image: 'assets/images/shop/ThinkVision P27h.jpg', badge: null, badgeColor: null },
+            { id: 80, name: 'Dell P2723QE', category: 'Peripherals', brand: 'Dell', price: 431.99, originalPrice: null, rating: 4.7, description: '27",4K UHD,HDMI,Display Port,USB 3.2 Gen 1,Ethernet(RJ45),USB-C 3.2 Gen 1 ', image: 'assets/images/shop/Dell P2723QE.jpg', badge: null, badgeColor: null },
+            { id: 81, name: 'Apple Pro Display XDR', category: 'Peripherals', brand: 'Apple', price: 4999, originalPrice: null, rating: 5, description: '32",IPS LCD with Retina 6K ,One 96W Thunderbolt 3', image: 'assets/images/shop/Apple Pro Display XDR.jpg', badge: null, badgeColor: null },
+            /*keyboards*/ 
+            { id: 82, name: 'Mechanical Keyboard', category: 'Peripherals', brand: 'Dell', price: 159, originalPrice: null, rating: 4.8, description: 'RGB, Cherry MX Switches', image: 'assets/images/shop/mechanical-keyboard.jpg', badge: 'Best Seller', badgeColor: 'bg-green-500' },
+            { id: 83, name: 'Dell KB216 Wired Keyboard', category: 'Peripherals', brand: 'Dell', price: 15, originalPrice: null, rating: 4.5, description: 'USB Wired,standard 104 keys,Quiet typing', image: 'assets/images/premium/Dell KB216 Wired Keyboard.jpg', badge: null, badgeColor: 'bg-green-500' },
+            { id: 84, name: 'Wireless Keyboard', category: 'Peripherals', brand: 'Dell', price: 59, originalPrice: null, rating: 4.6, description: '2.4 GHz Wireless,Plug & Play,Low profile', image: 'assets/images/premium/Dell wireless keyboard.jpg', badge: null, badgeColor: 'bg-green-500' },
+            { id: 85, name: 'Essential Wired Keyboard', category: 'Peripherals', brand: 'lenovo', price: 25, originalPrice: null, rating: 4.5, description: '104 Keys,Wired,Spill Resistant', image: 'assets/images/premium/Lenovo essential wired keyboard.jpg', badge: null, badgeColor: 'bg-green-500' },
+            { id: 86, name: 'Legion Gaming Keyboard', category: 'Peripherals', brand: 'Lenovo', price: 129, originalPrice: null, rating: 4.7, description: 'RGB Backlight,Mechanical,Anti-ghosting', image: 'assets/images/premium/Legion Gaming Keyboard.jpg', badge: null, badgeColor: 'bg-green-500' },
+            { id: 87, name: 'Magic Keyboard', category: 'Peripherals', brand: 'Apple', price: 129, originalPrice: null, rating: 4.8, description: 'Bluetooth,Rechargeable Scissor mechanism', image: 'assets/images/premium/Magic Keyboard.jpg', badge: null, badgeColor: 'bg-green-500' },
+            { id: 88, name: 'Magic Keyboard with Touch ID', category: 'Peripherals', brand: 'Apple', price: 179, originalPrice: null, rating: 4.9, description: 'Bluetooht,Touch ID Sensor,Rechargeable', image: 'assets/images/premium/Magic keyboard with Touch ID.jpg', badge: null, badgeColor: 'bg-green-500' },
+            { id: 89, name: 'ROG Gaming Keyboard', category: 'Peripherals', brand: 'ASUS', price: 149, originalPrice: null, rating: 4.7, description: 'RGB,Mechanical,N-key Rollover', image: 'assets/images/premium/ROG Gaming Keyboard.jpg', badge: null, badgeColor: 'bg-green-500' },
+            { id: 90, name: 'Standard USB Keyboard', category: 'Peripherals', brand: 'Acer', price: 29, originalPrice: null, rating: 4.4, description: 'USB Wired,104 Keys,Spill Resistant', image:'assets/images/premium/Standard keyboard.jpg' ,badge: null, badgeColor: 'bg-green-500' },
+            { id: 91, name: 'Nitro Gaming Keyboard', category: 'Peripherals', brand: 'Acer', price: 119, originalPrice: null, rating: 4.6, description: 'RGB Backlight,Mechanical feel,Durable build', image: 'assets/images/premium/Nitro Gaming keyboard.jpg', badge: null, badgeColor: 'bg-green-500' },
+              /*Mouse */
+            { id: 92, name: 'Gaming Mouse', category: 'Peripherals', brand: 'ASUS', price: 89, originalPrice: null, rating: 4.6, description: 'Wireless, 25K DPI Sensor', image: 'assets/images/shop/gaming-mouse.jpg', badge: null, badgeColor: null },
+            { id: 93, name: 'Wired Mouse', category: 'Peripherals', brand: 'lenovo', price: 14, originalPrice: null, rating: 4.5, description: 'USB,optical sensor & comfortable grip', image: 'assets/images/premium/Lenovo wired mouse.jpg', badge: null, badgeColor: null },
+            { id: 94, name: 'Wireless Mouse', category: 'Peripherals', brand: 'ASUS', price: 29, originalPrice: null, rating: 4.6, description: 'Silent clicks ,Blurtooth &RF', image: 'assets/images/premium/Asus Wireless Mouse.jpg', badge: null, badgeColor: null },
+            { id: 95, name: 'Bluetooth Mouse', category: 'Peripherals', brand: 'Apple', price: 99, originalPrice: null, rating: 4.6, description: 'Rating 4.7,Multi-Touch,BLuetooth', image: 'assets/images/premium/Apple Bluetooth Mouse.jpg', badge: null, badgeColor: null },
+            { id: 96, name: 'Optical Mouse', category: 'Peripherals', brand: 'Acer', price: 15, originalPrice: null, rating: 4.6, description: 'provide optical mice & wireless series', image: 'assets/images/premium/Acer optical mouse.jpg', badge: null, badgeColor: null },
+            { id: 97, name: 'Laser Mouse', category: 'Peripherals', brand: 'Dell', price: 39, originalPrice: null, rating: 4.6, description: 'High precision,RGB,Gaming', image: 'assets/images/premium/Dell Laser mouse.jpg', badge: null, badgeColor: null },
+            { id: 98, name: 'Ergonomic/Vertical Mouse', category: 'Peripherals', brand: 'ASUS', price: 45, originalPrice: null, rating: 4.6, description: 'Vertical design & reduce wrist strain', image: 'assets/images/premium/Asus Ergomouse.jpg', badge: null, badgeColor: null },
+            { id: 99, name: 'Trackball Mouse', category: 'Peripherals', brand: 'Lenovo', price: 55, originalPrice: null, rating: 4.6, description: 'Comfortable for long use', image: 'assets/images/premium/Lenovo Trackball.jpg', badge: null, badgeColor: null },
+            { id: 100, name: 'Specialty Mouse', category: 'Peripherals', brand: 'Acer', price: 33, originalPrice: null, rating: 4.6, description: 'Light wight & portable', image: 'assets/images/premium/Acer Arc Mouse.jpg', badge: null, badgeColor: null },
+            /*end---*/
+            ];
+
+        let filteredProducts = [...products];
+        let currentCategory = 'All Products';
+        let selectedBrands = [];
+        let selectedPriceRanges = [];
+        let sortBy = 'featured';
+        let viewMode = 'grid';
+        let currentPage = 1;
+        const itemsPerPage = 6;
+
+        // Cart array
+        let cart = [];
+
+        // Category Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('filter-active'));
+                btn.classList.add('filter-active');
+                currentCategory = btn.textContent.trim();
+                currentPage = 1;
+                applyFilters();
+            });
+        });
+
+        // Brand checkboxes
+        const setupCheckboxes = () => {
+            const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+
+            // In HTML: First 4 are price ranges, last 5 are brands
+            const priceCheckboxes = Array.from(allCheckboxes).slice(0, 4); // First 4 are price ranges
+            const brandCheckboxes = Array.from(allCheckboxes).slice(4); // Last 5 are brands
+
+            // Brand filters
+            brandCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', (e) => {
+                    const brand = e.target.parentElement.textContent.trim();
+                    if (e.target.checked) {
+                        if (!selectedBrands.includes(brand)) {
+                            selectedBrands.push(brand);
+                        }
+                    } else {
+                        selectedBrands = selectedBrands.filter(b => b !== brand);
+                    }
+                    currentPage = 1;
+                    applyFilters();
+                });
+            });
+
+            // Price range filters
+            priceCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', (e) => {
+                    const priceRangeText = e.target.parentElement.textContent.trim();
+                    if (e.target.checked) {
+                        if (!selectedPriceRanges.includes(priceRangeText)) {
+                            selectedPriceRanges.push(priceRangeText);
+                        }
+                    } else {
+                        selectedPriceRanges = selectedPriceRanges.filter(p => p !== priceRangeText);
+                    }
+                    currentPage = 1;
+                    applyFilters();
+                });
+            });
+        };
+
+        // Sort dropdown
+        const sortDropdown = document.querySelector('select');
+        sortDropdown.addEventListener('change', (e) => {
+            const selectedText = e.target.options[e.target.selectedIndex].text;
+            sortBy = selectedText;
+            currentPage = 1;
+            applyFilters();
+        });
+
+        // View mode toggle
+        const setupViewToggle = () => {
+            const viewBtns = document.querySelectorAll('.flex.border button');
+            viewBtns.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    viewBtns.forEach(b => {
+                        b.classList.remove('bg-gray-900', 'text-white');
+                        b.classList.add('hover:bg-gray-50');
+                    });
+                    btn.classList.remove('hover:bg-gray-50');
+                    btn.classList.add('bg-gray-900', 'text-white');
+                    viewMode = index === 0 ? 'grid' : 'list';
+                    renderProducts();
+                });
+            });
+        };
+
+        // Apply all filters
+        function applyFilters() {
+            filteredProducts = products.filter(product => {
+                // Category filter
+                let categoryMatch = currentCategory === 'All Products' || product.category === currentCategory;
+
+                // Brand filter
+                let brandMatch = selectedBrands.length === 0 || selectedBrands.includes(product.brand);
+
+                // Price range filter
+                let priceMatch = selectedPriceRanges.length === 0 || selectedPriceRanges.some(range => {
+                    if (range.includes('Under $500')) return product.price < 500;
+                    if (range.includes('$500 - $1000')) return product.price >= 500 && product.price <= 1000;
+                    if (range.includes('$1000 - $1500')) return product.price >= 1000 && product.price <= 1500;
+                    if (range.includes('$1500+')) return product.price >= 1500;
+                    return false;
+                });
+
+                return categoryMatch && brandMatch && priceMatch;
+            });
+
+            // Apply sorting
+            if (sortBy.includes('Low to High')) {
+                filteredProducts.sort((a, b) => a.price - b.price);
+            } else if (sortBy.includes('High to Low')) {
+                filteredProducts.sort((a, b) => b.price - a.price);
+            } else if (sortBy.includes('Newest')) {
+                filteredProducts.sort((a, b) => b.id - a.id);
+            } else if (sortBy.includes('Best Selling')) {
+                filteredProducts.sort((a, b) => b.rating - a.rating);
+            }
+
+            renderProducts();
+            updateProductCount();
+        }
+
+        // Update product count
+        function updateProductCount() {
+            document.querySelector('.text-gray-600').innerHTML =
+                `<span class="font-semibold text-gray-900">${filteredProducts.length}</span> products found`;
+        }
+
+        // Render products
+        function renderProducts() {
+            const container = document.getElementById('products-grid-container');
+
+            if (!container) return;
+
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const productsToShow = filteredProducts.slice(startIndex, endIndex);
+
+            // Update container classes based on view mode
+            if (viewMode === 'grid') {
+                container.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6';
+            } else {
+                container.className = 'flex flex-col gap-6';
+            }
+
+            container.innerHTML = productsToShow.map(product => `
+                <div class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 ${viewMode === 'list' ? 'flex flex-row' : ''}">
+                    <div class="relative ${viewMode === 'list' ? 'w-48 h-48' : 'aspect-square'} bg-gray-100 overflow-hidden flex-shrink-0">
+                        <div class="absolute top-3 right-3 z-10">
+                            <button class="wishlist-btn w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-red-500 hover:text-white transition-all duration-300" data-id="${product.id}">
+                                <i class='bx bx-heart text-xl'></i>
+                            </button>
+                        </div>
+                        ${product.badge ? `
+                        <div class="absolute top-3 left-3 z-10">
+                            <span class="px-3 py-1 ${product.badgeColor.includes('from') ? 'bg-gradient-to-r' : ''} ${product.badgeColor} text-white text-xs font-semibold rounded-full">${product.badge}</span>
+                        </div>
+                        ` : ''}
+                        <div class="w-full h-full flex items-center justify-center p-6">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="hidden w-full h-full items-center justify-center">
+                                <i class='bx bx-image text-8xl text-gray-300'></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 ${viewMode === 'list' ? 'flex-1 flex flex-col justify-between' : ''}">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <h3 class="font-bold text-gray-900 text-lg group-hover:text-blue-600 transition-colors">${product.name}</h3>
+                                <div class="flex items-center gap-1 text-yellow-400 text-sm flex-shrink-0 ml-2">
+                                    <i class='bx bxs-star'></i>
+                                    <span class="text-gray-600 font-medium">${product.rating}</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3">${product.description}</p>
+                            <p class="text-xs text-gray-400 mb-2">Brand: ${product.brand} | Category: ${product.category}</p>
+                        </div>
+                        <div class="flex items-center justify-between ${viewMode === 'list' ? 'mt-4' : ''}">
+                            <div>
+                                <p class="text-2xl font-bold text-gray-900">$${product.price.toLocaleString()}</p>
+                                ${product.originalPrice ? `<p class="text-sm text-gray-400 line-through">$${product.originalPrice.toLocaleString()}</p>` : ''}
+                            </div>
+                            <button class="add-to-cart-btn px-4 py-2 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 transform hover:scale-105" data-id="${product.id}">
+                                <i class='bx bx-cart-add text-xl'></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Add event listeners to new buttons
+            addProductEventListeners();
+            renderPagination();
+        }
+
+        // Add to cart and wishlist functionality
+        function addProductEventListeners() {
+            // Add to cart buttons
+            document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const productId = parseInt(e.currentTarget.dataset.id);
+                    const product = products.find(p => p.id === productId);
+                    addToCart(product);
+                });
+            });
+
+            // Wishlist buttons
+            document.querySelectorAll('.wishlist-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const icon = e.currentTarget.querySelector('i');
+                    if (icon.classList.contains('bx-heart')) {
+                        icon.classList.remove('bx-heart');
+                        icon.classList.add('bxs-heart');
+                        e.currentTarget.classList.add('bg-red-500', 'text-white');
+                    } else {
+                        icon.classList.remove('bxs-heart');
+                        icon.classList.add('bx-heart');
+                        e.currentTarget.classList.remove('bg-red-500', 'text-white');
+                    }
+                });
+            });
+        }
+
+        // Add to cart function
+        function addToCart(product) {
+            const existingItem = cart.find(item => item.id === product.id);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            updateCartBadge();
+            showNotification(`${product.name} added to cart!`);
+        }
+
+        // Update cart badge
+        function updateCartBadge() {
+            const badge = document.querySelector('.bx-cart').nextElementSibling;
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            badge.textContent = totalItems;
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-24 right-6 bg-gray-900 text-white px-6 py-4 rounded-xl shadow-2xl z-50 transform transition-all duration-300 translate-x-0';
+            notification.innerHTML = `
+                <div class="flex items-center gap-3">
+                    <i class='bx bx-check-circle text-2xl text-green-400'></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.transform = 'translateX(400px)';
+                setTimeout(() => notification.remove(), 300);
+            }, 2000);
+        }
+
+        // Render pagination
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+            const paginationContainer = document.getElementById('pagination-container');
+
+            if (!paginationContainer) return;
+
+            if (totalPages <= 1) {
+                paginationContainer.classList.add('hidden');
+                return;
+            }
+
+            paginationContainer.classList.remove('hidden');
+
+            let paginationHTML = `
+                <button class="pagination-btn w-10 h-10 rounded-lg border border-gray-200 hover:border-gray-900 flex items-center justify-center transition-all duration-300 ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''}" data-page="prev" ${currentPage === 1 ? 'disabled' : ''}>
+                    <i class='bx bx-chevron-left'></i>
+                </button>
+            `;
+
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+                    paginationHTML += `
+                        <button class="pagination-btn w-10 h-10 rounded-lg ${i === currentPage ? 'bg-gray-900 text-white' : 'border border-gray-200 hover:border-gray-900'} transition-all duration-300 font-semibold" data-page="${i}">
+                            ${i}
+                        </button>
+                    `;
+                } else if (i === currentPage - 2 || i === currentPage + 2) {
+                    paginationHTML += `<span class="px-2">...</span>`;
+                }
+            }
+
+            paginationHTML += `
+                <button class="pagination-btn w-10 h-10 rounded-lg border border-gray-200 hover:border-gray-900 flex items-center justify-center transition-all duration-300 ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}" data-page="next" ${currentPage === totalPages ? 'disabled' : ''}>
+                    <i class='bx bx-chevron-right'></i>
+                </button>
+            `;
+
+            paginationContainer.innerHTML = paginationHTML;
+
+            // Add pagination event listeners
+            document.querySelectorAll('.pagination-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const page = e.currentTarget.dataset.page;
+                    const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+
+                    if (page === 'prev' && currentPage > 1) {
+                        currentPage--;
+                    } else if (page === 'next' && currentPage < totalPages) {
+                        currentPage++;
+                    } else if (page !== 'prev' && page !== 'next') {
+                        currentPage = parseInt(page);
+                    }
+
+                    renderProducts();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+        }
+
+        // Initialize
+        window.addEventListener('load', function () {
+            setupCheckboxes();
+            setupViewToggle();
+            renderProducts();
+            updateProductCount();
+        });
+    </script>
+</body>
+
+</html>

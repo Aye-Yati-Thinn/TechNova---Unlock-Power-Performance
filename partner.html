@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Boxicons CDN -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /*About Us section*/
+        .about-section {
+            width: 100%;
+            height: 100vh;
+            padding-top: 25px;
+            background-color: black;
+            color: aliceblue;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 50px;
+            font-weight: bolder;
+            font-family: 'Courier New', Courier, monospace;
+            text-shadow: 0px 0px 2px whitesmoke;
+        }
+
+        .about-card {
+            display: flex;
+            gap: 50px;
+            margin-top: 30px;
+            margin-bottom: 70px;
+            margin-left: 8%;
+            margin-right: 7%;
+        }
+
+        .about-card reverse {
+            flex-direction: row-reverse;
+        }
+
+        .about-text {
+            color: aliceblue;
+            width: 50%;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .card-title {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 29px;
+            font-weight: bolder;
+            padding: 12px;
+            text-shadow: 0px 0px 3px whitesmoke;
+        }
+
+        .text-content p {
+            color: rgb(218, 237, 237);
+            line-height: 1.7;
+            font-size: 18px;
+            padding: 15px 0;
+        }
+
+        .container {
+            width: 50%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(239, 236, 236, 0.853);
+        }
+
+        .container img {
+            width: 100%;
+            display: block;
+            transition: 0.6s;
+        }
+
+        .container img:hover {
+            transform: scale(1.1);
+        }
+
+        /*--------------------------------------------------------*/
+        /*Button section*/
+        .about-btn {
+            margin-left: 20%;
+        }
+
+        .team-link {
+            padding: 8px;
+            border-radius: 30px;
+            margin: 2.5% 5% 4.5%;
+            font-size: medium;
+            font-weight: bold;
+            border: 3px solid rgba(42, 40, 40, 0.742);
+            transition: 0.6;
+        }
+
+        .team-link a {
+            text-decoration: none;
+        }
+
+        .team-link:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(239, 236, 236, 0.853);
+        }
+
+        /*for not working section*/
+        section::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /*--------------------------------------------------------*/
+        /*Team section*/
+        .team-section {
+            background-color: black;
+            color: #ffffff;
+            overflow: hidden;
+            margin-top: 10px;
+            width: 100%;
+            height: 100vh;
+        }
+
+
+        .team-title {
+            margin: 20px;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 30px;
+            text-shadow: 0 4px 8px rgba(227, 218, 218, 0.908);
+        }
+
+        .team-text {
+            margin: 15px;
+            text-align: center;
+            font-size: large;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bolder;
+            text-shadow: 0 4px 8px rgba(243, 243, 243, 0.633);
+        }
+
+
+        .team-card-flex {
+            display: flex;
+            flex-direction: row;
+            width: 45%;
+            float: left;
+            background-color: #180101;
+            border-radius: 23px;
+            box-shadow: 4px 4px 8px rgba(246, 241, 241, 0.893);
+            padding: 25px;
+            color: rgb(202, 153, 239);
+            margin: 35px 40px 35px 25px;
+            height: 200px;
+            transition: 0.5s;
+        }
+
+        .team-card-flex:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px rgba(185, 182, 182, 0.978);
+            background-color: #e0bef5;
+            color: #0d0d0d;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid black;
+            padding: 5px;
+            margin-bottom: 20px;
+            transition: 0.9;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .member-info {
+            width: 450px;
+            padding: 5px 10px;
+        }
+
+        .member-info h1 {
+            color: rgb(249, 247, 247);
+            padding-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .member-discription {
+            padding: 10px;
+        }
+
+        .dropdown {
+            margin: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(17, 16, 16);
+            border-radius: 10px;
+            min-width: 300px;
+            box-shadow: 0px 8px 16px 0px rgba(17, 16, 16, 0.2);
+            padding: 10px 10px;
+            color: rgba(236, 226, 226, 0.849);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .member-role {
+            display: block;
+            padding: 0 5px 5px;
+            font-weight: bold;
+            color: coral;
+        }
+
+        .fb {
+            color: rgb(23, 26, 208);
+        }
+
+        .in {
+            color: rgb(248, 0, 161);
+        }
+
+        .tt {
+            color: rgb(0, 128, 255);
+        }
+
+        .team-btn {
+            padding: 10px;
+            margin: 20px 700px;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(197, 53, 229, 0.978);
+        }
+
+        .team-btn a {
+            text-decoration: none;
+        }
+
+        /*for not working section*/
+        section::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /*--------------------------------------------------------*/
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .team-section {
+                width: 100%;
+                height: max-content;
+            }
+
+            .team-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .team-card-flex {
+                margin: 10px;
+                flex-direction: row;
+                align-items: center;
+                width: 90%;
+            }
+
+            .profile-image {
+                flex-shrink: 1;
+            }
+
+
+            .dropdown-content{
+                padding-right: 10px;
+                width: 200px;
+                font-size: 14px;
+                text-align: left;
+                position: absolute;
+                background-color: rgb(17, 16, 16);
+                border-radius: 10px;
+                min-width: 150px;
+            }
+
+           
+        }
+        /* responsive for laptop */ 
+            @media (min-width: 1024px) and (max-width: 1440px) {
+                .about-section {
+                    width: 100%;
+                    height: auto;
+                    padding-top: 40px;
+                }
+                .about-card {
+                    gap: 40px;
+                    margin-left: 10%;
+                    margin-right: 10%;
+                    margin-top: 40px;
+                    margin-bottom: 60px;
+                }
+                .container {
+                    width: 45%;
+                    box-shadow: 0 2px 6px rgba(238, 126, 220, 0.5);
+                }
+                .about-text, .text-content {
+                    width: 55%;
+                    font-size: 19px;
+                }
+                .section-title {
+                    font-size: 44px;
+                }
+                .card-title {
+                    font-size: 26px;
+                }
+                .about-btn {
+                    margin-left: 25%;
+                }
+                .team-section {
+                    width: 100%;
+                    height: auto;
+                    padding-bottom: 40px;
+                }
+                .team-container {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+                .team-card-flex {
+                    width: 48%;
+                    margin: 30px 1%;
+                    height: 220px;
+                    flex-direction: row;
+                    align-items: center;
+                }
+                .profile-image {
+                    width: 120px;
+                    height: 120px;
+                }
+                .member-info {
+                    width: 60%;
+                    font-size: 17px;
+                }
+                .team-title {
+                    font-size: 28px;
+                }
+                .team-btn {
+                    margin: 20px 40%;
+                }
+                .review-container {
+                    width: 100%;
+                    height: auto;
+                    padding-bottom: 40px;
+                }
+                .fir-row, .sec-row {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                }
+                .fir-card {
+                    width: 23%;
+                    margin: 10px 1%;
+                    font-size: 16px;
+                }
+                .servic-section {
+                    width: 100%;
+                    height: auto;
+                    padding-bottom: 40px;
+                }
+                .fir, .sec {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                }
+                .one, .two {
+                    width: 30%;
+                    margin-bottom: 0;
+                    font-size: 16px;
+                }
+                .press-section {
+                    width: 100%;
+                    height: auto;
+                    padding-bottom: 40px;
+                }
+                .mpress-container {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                }
+                .press-content {
+                    width: 60%;
+                    font-size: 18px;
+                }
+                .main-press-photo img {
+                    display: block;
+                    width: 320px;
+                    height: 180px;
+                }
+                .media-card {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                }
+                .card {
+                    width: 30%;
+                    margin: 20px 1%;
+                    font-size: 16px;
+                }
+                .card img {
+                    width: 100%;
+                    height: 160px;
+                }
+            }
+    </style>
+</head>
+
+<body>
+     <!-- Hero Section -->
+    <section class="relative bg-black text-white py-24 overflow-hidden">
+        <!-- Animated blur backgrounds -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl float-animation"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl float-animation" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl float-animation" style="animation-delay: 4s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+            <div class="inline-block mb-4 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20">
+                ✨Team Member Comunity
+            </div>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+             Our Per
+                <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">fect Team</span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+                Deep dive into our energetic yougsters' portfolio.
+            </p>
+            
+           
+    </section>
+
+    <!--Meet our Team section-->
+    <section id="team-intro" class="team-section">
+       
+
+            <div class="team-card-flex">
+                <div class="profile-image">
+                    <img src="./assets/images/accessories/helena.jpg"
+                        alt="profile-image">
+                </div>
+                <div class="member-info">
+                    <h1>Julian</h1>
+                    <p class="member-description">
+                        She significantly graduated from <b><i>Stanford University</i></b> in 2016.
+                        Work experiences as a sale-manager is 5 years.
+                    </p>
+                    <div class="dropdown">
+                        <button>Read More </button>
+                        <div class="dropdown-content">
+                            <p>
+                                She started college with business management major in 2013.
+                                Got highest grades in every semester and graduated with qualify in 2016.
+                                After graduated,she worked in a selling electronics product company as
+                                a sale-manager for five years.
+                            </p>
+                        </div>
+                    </div>
+                    <span class="member-role">Position-Founder</span>
+                    <a href="#" class="fb"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="#" class="in"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="tt"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="team-card-flex">
+                <div class="profile-image">
+                    <img src="./assets/images/accessories/heybrew.jpg"
+                        alt="profile photo">
+                </div>
+                <div class="member-info">
+                    <h1 class="member-name">Heybrew</h1>
+                    <p class="member-description">
+                        He graduated from <b><i>International Art & Academy</i></b> in 2012.
+                        And is also the most innovative person in our group.
+                    </p>
+                    <div class="dropdown">
+                        <button>Read More </button>
+                        <div class="dropdown-content">
+                            <p>
+                                After graduating the Art academy,he works as a freelance
+                                designer for 6 years and later we recurited him as our
+                                company's main Designer because his works are really worth
+                                to use it.
+                            </p>
+                        </div>
+                    </div>
+                    <span class="member-role">Position-Designer</span>
+                    <a href="#" class="fb"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="#" class="in"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="tt"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="team-card-flex">
+                <div class="profile-image">
+                    <img src="./assets/images/accessories/threw.jpg"
+                        alt="profile photo">
+                </div>
+                <div class="member-info">
+                    <h1 class="member-name">Helena</h1>
+                    <p class="member-description">
+                        Her <i><b>Leadership skills</b></i> are absolutely professional.
+                    </p>
+                    <div class="dropdown">
+                        <button>Read More </button>
+                        <div class="dropdown-content">
+                            <p>
+                                Although her brief description is very shot,she is an
+                                expert as a leader.Because of her flexible personality,we
+                                can easily arrange and negotiate with our cus and staff.
+                                This is also a perfect skill,right!
+                            </p>
+                        </div>
+                    </div>
+                    <span class="member-role">Position-Leader</span>
+                    <a href="#" class="fb"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="#" class="in"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="tt"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="team-card-flex">
+                <div class="profile-image">
+                    <img src="./assets/images/accessories/julian.jpg"
+                        alt="">
+                </div>
+                <div class="member-info">
+                    <h1 class="member-name">Agenas</h1>
+                    <p class="member-description">
+                        Graduated with business management major from <em><strong> Oxford University</strong></em>.
+                    </p>
+                    <div class="dropdown">
+                        <button>Read More </button>
+                        <div class="dropdown-content">
+                            <p>
+                                Being as the best <strong>Media Commentator</strong> in our group,his communication
+                                and announcement skills are really exceptional amongst us.
+                            </p>
+                        </div>
+                    </div>
+                    <span class="member-role">Position-Admin</span>
+                    <a href="#" class="fb"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="#" class="in"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="tt"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+            <div>
+                <button class="team-btn"><a href="review.html">Learn More</a></button>
+            </div>
+        </div> <br> <br>
+
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gradient-to-b from-gray-900 to-black text-gray-300 py-16 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 lg:gap-16">
+                <!-- Left Column - Newsletter -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center space-x-2 mb-6 group cursor-pointer">
+                        <i class='bx bx-bot text-4xl text-white group-hover:rotate-12 transition-transform duration-300'></i>
+                        <span class="text-2xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">TechnoVA</span>
+                    </div>
+                    <h3 class="text-white font-bold text-lg mb-4">Stay Ahead with Exclusive Deals & Tech Tips!</h3>
+                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+                        Subscribe to our newsletter and get the latest updates on new arrivals, flash sales, expert reviews, and handy tech advice — straight to your inbox!
+                    </p>
+                    
+                    <!-- Newsletter Form -->
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <input 
+                            type="email" 
+                            placeholder="Enter your email address" 
+                            class="flex-1 px-5 py-3 bg-gray-800/50 backdrop-blur-sm text-white rounded-xl border border-gray-700 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 placeholder-gray-500 transition-all duration-300"
+                        >
+                        <button class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-8 py-3 rounded-xl transition-all duration-300 font-semibold whitespace-nowrap transform hover:scale-105 shadow-lg hover:shadow-2xl">
+                            Subscribe →
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Middle Column - Links -->
+                <div class="grid grid-cols-2 gap-8 lg:gap-12">
+                    <!-- Column 1 -->
+                    <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li><a href="shop.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Shop</a></li>
+                            <li><a href="categories.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Categories</a></li>
+                            <li><a href="brands.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Brands</a></li>
+                            <li><a href="Accessories.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Accessories</a></li>
+                           
+                        </ul>
+                    </div>
+                    
+                    <!-- Column 2 -->
+                    <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Company</h4>
+                        <ul class="space-y-3">
+                            <li><a href="about.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ About Us</a></li>
+                            <li><a href="contant.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Contact</a></li>
+                            <li><a href="warranty.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Privacy Policy</a></li>
+                            <li><a href="shipping info.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Terms of Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--column--3-->
+                 <div>
+                        <h4 class="text-white font-bold mb-4 text-lg">Others</h4>
+                        <ul class="space-y-3">
+                            <li><a href="support.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Supports</a></li>
+                            <li><a href="blog.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Blogs</a></li>
+                             <li><a href="partner.html" class="hover:text-white transition-all duration-300 text-sm hover:translate-x-1 inline-block">→ Partners</a></li>
+                        </ul>
+                    </div>
+                
+                <!-- Right Column - Social -->
+                <div class="lg:col-span-1">
+                    <h4 class="text-white font-bold mb-4 text-lg">Follow Us</h4>
+                    <p class="text-sm text-gray-400 mb-6">Stay connected on social media</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/share/19kCEyhj9t/" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-600 hover:to-purple-600 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-facebook text-2xl'></i>
+                        </a>
+                        <a href="https://www.instagram.com/the.apexsquad?igsh=ZnV5ZHpqbmZ3Zzd2" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-pink-600 hover:to-purple-600 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-instagram text-2xl'></i>
+                        </a>
+                        <a href="https://www.youtube.com/@TheApexSquad-s1w" class="w-12 h-12 bg-gray-800 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-900 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+                            <i class='bx bxl-youtube text-2xl'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="mt-16 pt-8 border-t border-gray-800 text-center">
+                <p class="text-sm text-gray-500">© 2025 TechnoVA. All rights reserved. Made with <span class="text-red-500">❤</span> for tech enthusiasts</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

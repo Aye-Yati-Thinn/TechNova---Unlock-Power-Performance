@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - TechnoVA</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Boxicons CDN -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Pulse animation */
+        @keyframes pulse-scale {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .pulse-animation {
+            animation: pulse-scale 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation Bar -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+               <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2 group cursor-pointer">
+                <img src="./images/output-onlinepngtools.png" style="width: 100px; color: #0f0f0f;">
+            
+                    <span class="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">TechnoVA</span>
+                </a>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                     <a href="index.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all">Home</a>
+                    <a href="shop.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all">Shop</a>
+                    <a href="categories.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all">Categories</a>
+                    <a href="brands.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all">Brands</a>
+                    <a href="accessories.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all">Accessories</a>
+                    <a href="support.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 hover:after:w-full after:transition-all">Support</a>
+                </div>
+                
+                <!-- Right Icons -->
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-700 hover:text-gray-900 transition-all duration-300 hover:scale-110 transform">
+                        <i class='bx bx-search text-2xl'></i>
+                    </button>
+                    <a href="profile.html" class="text-gray-700 hover:text-gray-900 transition-all duration-300 hover:scale-110 transform">
+                        <i class='bx bx-user text-2xl'></i>
+                    </a>
+                    <a href="cart.html" class="text-gray-900 transition-all duration-300 hover:scale-110 transform relative">
+                        <i class='bx bxs-cart text-2xl'></i>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">3</span>
+                    </a>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobileMenuBtn" class="md:hidden text-gray-700 hover:text-gray-900 transition-transform duration-300 hover:scale-110">
+                        <i class='bx bx-menu text-2xl'></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 space-y-3">
+                <a href="shop.html" class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Shop</a>
+                <a href="categories.html" class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Categories</a>
+                <a href="brands.html" class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Brands</a>
+                <a href="accessories.html" class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Accessories</a>
+                <a href="support.html" class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Support</a>
+                <a href="profile.html" class="block text-gray-700 hover:text-gray-900 transition py-2 px-3 rounded-lg hover:bg-gray-50">Profile</a>
+                <a href="cart.html" class="block text-gray-900 font-bold transition py-2 px-3 rounded-lg bg-gray-100">Cart</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-black text-white py-16 overflow-hidden">
+        <!-- Animated blur backgrounds -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-green-500/20 rounded-full blur-3xl float-animation"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl float-animation" style="animation-delay: 2s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center">
+                <div class="inline-block mb-4 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20">
+                    🛒 3 Items in Cart
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    Shopping <span class="bg-gradient-to-r from-green-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">Cart</span>
+                </h1>
+                <p class="text-gray-300 text-lg">Review your items and proceed to checkout</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Content -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Cart Items -->
+                <div class="lg:col-span-2 space-y-4">
+                    <!-- Cart Item 1 -->
+                    <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                        <div class="flex flex-col sm:flex-row gap-6">
+                            <div class="w-full sm:w-32 h-32 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class='bx bx-laptop text-5xl text-blue-600'></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start mb-3">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-gray-900 mb-1">Dell XPS 15 Laptop</h3>
+                                        <p class="text-gray-600 text-sm">15.6" Display • 16GB RAM • 512GB SSD</p>
+                                    </div>
+                                    <button class="text-red-500 hover:text-red-600 transition">
+                                        <i class='bx bx-trash text-2xl'></i>
+                                    </button>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <button class="w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center transition">
+                                            <i class='bx bx-minus'></i>
+                                        </button>
+                                        <span class="font-semibold text-lg">1</span>
+                                        <button class="w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center transition">
+                                            <i class='bx bx-plus'></i>
+                                        </button>
+                                    </div>
+                                    <p class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">$1,299</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cart Item 2 -->
+                    <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                        <div class="flex flex-col sm:flex-row gap-6">
+                            <div class="w-full sm:w-32 h-32 bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class='bx bx-headphone text-5xl text-purple-600'></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start mb-3">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-gray-900 mb-1">Wireless Headphones Pro</h3>
+                                        <p class="text-gray-600 text-sm">Active Noise Cancellation • 30hr Battery</p>
+                                    </div>
+                                    <button class="text-red-500 hover:text-red-600 transition">
+                                        <i class='bx bx-trash text-2xl'></i>
+                                    </button>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <button class="w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center transition">
+                                            <i class='bx bx-minus'></i>
+                                        </button>
+                                        <span class="font-semibold text-lg">2</span>
+                                        <button class="w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center transition">
+                                            <i class='bx bx-plus'></i>
+                                        </button>
+                                    </div>
+                                    <p class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">$598</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cart Item 3 -->
+                    <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                        <div class="flex flex-col sm:flex-row gap-6">
+                            <div class="w-full sm:w-32 h-32 bg-gradient-to-br from-green-100 to-teal-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="bi bi-keyboard text-5xl text-green-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start mb-3">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-gray-900 mb-1">Mechanical Keyboard RGB</h3>
+                                        <p class="text-gray-600 text-sm">Cherry MX Switches • RGB Backlight</p>
+                                    </div>
+                                    <button class="text-red-500 hover:text-red-600 transition">
+                                        <i class='bx bx-trash text-2xl'></i>
+                                    </button>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <button class="w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center transition">
+                                            <i class='bx bx-minus'></i>
+                                        </button>
+                                        <span class="font-semibold text-lg">1</span>
+                                        <button class="w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center transition">
+                                            <i class='bx bx-plus'></i>
+                                        </button>
+                                    </div>
+                                    <p class="text-2xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">$149</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100 sticky top-24">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Order Summary</h2>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="flex justify-between text-gray-600">
+                                <span>Subtotal (4 items)</span>
+                                <span class="font-semibold">$2,046</span>
+                            </div>
+                            <div class="flex justify-between text-gray-600">
+                                <span>Shipping</span>
+                                <span class="font-semibold text-green-600">Free</span>
+                            </div>
+                            <div class="flex justify-between text-gray-600">
+                                <span>Tax</span>
+                                <span class="font-semibold">$204.60</span>
+                            </div>
+                            <div class="border-t border-gray-200 pt-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xl font-bold text-gray-900">Total</span>
+                                    <span class="text-3xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">$2,250.60</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Promo Code -->
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-semibold mb-2">Promo Code</label>
+                            <div class="flex gap-2">
+                                <input type="text" class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all" placeholder="Enter code">
+                                <button class="bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-600 hover:to-gray-800 text-white px-6 py-3 rounded-xl transition-all duration-300 font-semibold">
+                                    Apply
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Checkout Button -->
+                        <button class="w-full bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600 hover:from-green-500 hover:via-teal-500 hover:to-cyan-500 text-white px-8 py-4 rounded-xl transition-all duration-300 font-bold text-lg shadow-lg hover:shadow-2xl transform hover:scale-[1.02] mb-4">
+                            Proceed to Checkout →
+                        </button>
+                        
+                        <!-- Continue Shopping -->
+                        <a href="shop.html" class="block text-center text-gray-600 hover:text-gray-900 font-semibold transition">
+                            ← Continue Shopping
+                        </a>
+                        
+                        <!-- Trust Badges -->
+                        <div class="mt-8 pt-8 border-t border-gray-200">
+                            <div class="space-y-3 text-sm text-gray-600">
+                                <div class="flex items-center gap-2">
+                                    <i class='bx bx-shield-alt-2 text-green-600 text-xl'></i>
+                                    <span>Secure Checkout</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class='bx bx-package text-blue-600 text-xl'></i>
+                                    <span>Free Shipping Over $50</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class='bx bx-refresh text-purple-600 text-xl'></i>
+                                    <span>30-Day Returns</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommended Products -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-black mb-4">You Might Also Like</h2>
+                <p class="text-gray-600 text-lg">Complete your tech setup with these products</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="group bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-blue-100">
+                    <div class="w-full h-40 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl flex items-center justify-center mb-4">
+                        <i class='bx bx-mouse text-5xl text-blue-600 group-hover:scale-110 transition-transform duration-300'></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">Wireless Mouse</h3>
+                    <p class="text-gray-600 text-sm mb-3">Ergonomic Design</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-blue-600">$49</span>
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-lg transition">
+                            <i class='bx bx-cart text-xl'></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="group bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-purple-100">
+                    <div class="w-full h-40 bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl flex items-center justify-center mb-4">
+                        <i class='bx bx-desktop text-5xl text-purple-600 group-hover:scale-110 transition-transform duration-300'></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">4K Monitor</h3>
+                    <p class="text-gray-600 text-sm mb-3">27" Ultra HD</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-purple-600">$399</span>
+                        <button class="bg-purple-600 hover:bg-purple-700 text-white p-2 rounded-lg transition">
+                            <i class='bx bx-cart text-xl'></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="group bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-orange-100">
+                    <div class="w-full h-40 bg-gradient-to-br from-orange-100 to-red-100 rounded-xl flex items-center justify-center mb-4">
+                        <i class='bx bx-webcam text-5xl text-orange-600 group-hover:scale-110 transition-transform duration-300'></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">HD Webcam</h3>
+                    <p class="text-gray-600 text-sm mb-3">1080p Streaming</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-orange-600">$79</span>
+                        <button class="bg-orange-600 hover:bg-orange-700 text-white p-2 rounded-lg transition">
+                            <i class='bx bx-cart text-xl'></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="group bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-green-100">
+                    <div class="w-full h-40 bg-gradient-to-br from-green-100 to-teal-100 rounded-xl flex items-center justify-center mb-4">
+                        <i class='bx bx-usb text-5xl text-green-600 group-hover:scale-110 transition-transform duration-300'></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">USB Hub</h3>
+                    <p class="text-gray-600 text-sm mb-3">7-Port Expansion</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl font-bold text-green-600">$35</span>
+                        <button class="bg-green-600 hover:bg-green-700 text-white p-2 rounded-lg transition">
+                            <i class='bx bx-cart text-xl'></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-b from-gray-900 to-black text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex items-center justify-center space-x-2 mb-6 group cursor-pointer">
+                <i class='bx bx-bot text-3xl text-white group-hover:rotate-12 transition-transform duration-300'></i>
+                <span class="text-2xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">TechnoVA</span>
+            </div>
+            <p class="text-sm text-gray-500">© 2025 TechnoVA. All rights reserved. Made with <span class="text-red-500">❤</span> for tech enthusiasts</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

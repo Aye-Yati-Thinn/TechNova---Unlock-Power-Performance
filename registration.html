@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f6ff;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #004080;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .required::after {
+      content: " *";
+      color: red;
+    }
+
+    .submit-btn {
+      margin-top: 30px;
+      background-color: #004080;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #003060;
+    }
+
+    .note {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111112;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Customer & Warranty Registration</h1>
+
+    <form>
+      <label class="required">Device's Model Number</label>
+      <input type="text" placeholder="e.g. Dell Core i7" required />
+
+      <label class="required">Device's Serial Number</label>
+      <input type="text" placeholder="Enter serial number" required />
+
+      <label class="required">Date Of Purchase</label>
+      <input type="date" required />
+
+      <label class="required">Name</label>
+      <input type="text" placeholder="Your full name" required />
+
+      <label class="required">Phone Number</label>
+      <input type="tel" placeholder="e.g. +95-9-xxxxxxx" required />
+
+      <label class="required">Email</label>
+      <input type="email" placeholder="e.g. example@email.com" required />
+
+      <label class="required">Where Did You Come Across TechNova?</label>
+      <select required>
+        <option value="">-- Select an option --</option>
+        <option>Official Website</option>
+        <option>Google</option>
+        <option>Shopee</option>
+        <option>Lazada</option>
+        <option>Amazon</option>
+        <option>Carousell</option>
+        <option>Social Media (Facebook/Instagram)</option>
+        <option>Recommended by Family/Relatives/Friends</option>
+        <option>Other</option>
+      </select>
+
+      <button type="submit" class="submit-btn">Submit</button>
+      <p class="note">* Never submit passwords through this form.</p>
+    </form>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+    <p class="footer-bottom-text">© 2024 TechNova. All rights reserved. | Privacy Policy | Terms of Service</p>
+  </footer>
+</body>
+</html>

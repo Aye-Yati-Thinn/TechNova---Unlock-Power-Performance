@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>accessories > bag </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+    <style>
+      .menu-section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .menu-section h2 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .menu-section h2::before {
+      content: 'SPECIAL SELECTION';
+      position: absolute;
+      top: -30px;
+      font-size: 14px;
+      color: #f7f6f4;
+      left: 50%;
+      transform: translateX(-50%);
+      letter-spacing: 2px;
+    }
+
+    .menu-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .menu-column {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      border-radius: 85;
+    
+    }
+
+    .menu-item img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 15px;
+    }
+
+    .item-info {
+      flex: 1;
+      padding-left: 10px;
+    }
+
+    .item-title {
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .item-desc {
+      font-size: 13px;
+      color: #aaa;
+      margin-top: 5px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .tag {
+      font-size: 10px;
+      background-color: #c59d5f;
+      color: #000;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .menu-footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #c59d5f;
+      font-size: 14px;
+    }
+
+    .view-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 25px;
+      border: 1px solid #c59d5f;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: background 0.3s;
+    }
+
+    .view-button:hover {
+      background-color: #c59d5f;
+      color: #000;
+    }
+
+    /* Optional hover effect */
+    .menu-item:hover {
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .menu-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .menu-column {
+        width: 100%;
+        max-width: 500px;
+      }
+
+      .menu-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-item img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .item-info {
+        padding-left: 0;
+      }
+
+      .item-title {
+        font-size: 16px;
+      }
+
+      .item-desc {
+        font-size: 12px;
+      }
+
+      .price {
+        align-self: flex-end;
+        margin-top: 0px;
+      }
+
+      .menu-section h2 {
+        font-size: 30px;
+      }
+
+      .view-button {
+        font-size: 14px;
+        padding: 8px 20px;
+      }
+    }
+    .menu-item {
+        position: relative;
+        padding: 30px;
+        border: 1px solid#ddd;
+        border-radius:15px;
+        overflow: hidden;
+    }
+    .order-btn{
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background: #f3f1ef;
+        color: #160505;
+        border: none;
+        padding: 8px 14px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+        border-radius: 50px;
+    }
+    .order-btn:hover{
+        background: #edeae9;
+    }
+        :root {
+            --dark-bg: #1a1a1a;
+            --darker-bg: #0f0f0f;
+            --accent-color: #007bff;
+            --text-light: #ffffff;
+            --text-muted: #b0b0b0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        /* Footer */
+        .footer {
+            background-color: var(--darker-bg);
+            padding: 40px 0 20px;
+            color: var(--text-light);
+        }
+
+        .footer-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .footer-description {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .footer-section-title {
+            color: var(--text-light);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--text-light);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .footer-bottom-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin: 0;
+        }
+        
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer {
+                text-align: center;
+            }
+        }
+        </style>
+        <body>
+            <section class="menu-section">
+    <h2>Bags</h2>
+
+    <div class="menu-grid">
+      <!-- Left Column -->
+      <div class="menu-column">
+        <div class="menu-item">
+          <img src="images/2bag.jpg" alt="Lovevook ">
+          <div class="item-info">
+            <div class="item-title">Lovevook Laptop Bag <span class="tag">Promotion</span></div>
+            <div class="item-desc"> available color <br>grey,cyan,brown & soft blue <br>⬜️ 🟦 🟫 🟪 </div>
+          </div>
+          <div class="price">117,000 MMK</div>
+        </div>
+
+        <div class="menu-item">
+          <img src="images/6bag.jpg" alt="Diamond">
+          <div class="item-info">
+            <div class="item-title">Diamond Lattice Laptopbag </div>
+            <div class="item-desc"> available color <br>You Have Color Option <br>⬜️ 🟦 🟫 🟪 🟨 🟧 ⬛️ 🟥  </div>
+          </div>
+          <div class="price">174,000 MMK</div>
+        </div>
+
+        <div class="menu-item">
+          <img src="images/8bags.jpg" alt="Greek Salad">
+          <div class="item-info">
+            <div class="item-title">Louis Vuitton <span class="tag">Brand</span></div>
+            <div class="item-desc"> available color <br>only grey & black <br>⬜️ ⬛️  </div>
+          </div>
+          <div class="price">720,000 MMK</div>
+        </div>
+
+        <div class="menu-item">
+          <img src="images/3bag.jpg" alt="Womanix Canvas">
+          <div class="item-info">
+            <div class="item-title">Womanix Canvas</div>
+            <div class="item-desc">available color <br> black, cream & olive Green+brown <br>⬛️ ⬜️ 🟩 </div>
+          </div>
+          <div class="price">51,000 MMK</div>
+        </div>
+
+        <div class="menu-item">
+          <img src="images/4bag.jpg" alt="Indian pocket">
+          <div class="item-info">
+            <div class="item-title"> Indian pocket</div>
+            <div class="item-desc">business-bag-with-external-pocket <br> available color <br>Purple & Black <br> 🟪 ⬛️ </div>
+          </div>
+          <div class="price">42,000 MMK</div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="menu-column">
+        <div class="menu-item">
+          <img src="images/1bag.jpg" alt="Indian pocket">
+          <div class="item-info">
+            <div class="item-title">Indian pocket</div>
+            <div class="item-desc">business-bag-with-external-pocket <br> available color <br> 🟫 🟥</div>
+          </div>
+          <div class="price">42,000 MMK</div>
+        </div>
+
+        <div class="menu-item">
+          <img src="images/7bag.jpg" alt="Lenovo">
+          <div class="item-info">
+            <div class="item-title">Lenovo</div>
+            <div class="item-desc">available color <br> black <br>⬛️ </div>
+          </div>
+          <div class="price">36,000 MMK</div>
+        </div>
+
+        <div class="menu-item">
+          <img src="images/9bag.jpg" alt="Lovevook">
+          <div class="item-info">
+            <div class="item-title">Lovevook Laptop Bag </div>
+            <div class="item-desc"> available color <br>black, purple, cream,cyan, grey <br>⬛️ 🟪 ⬜️ 🟩 🟫 </div>
+          </div>
+          <div class="price">117,000 MMK</div>
+        </div>
+
+        <div class="menu-item">
+          <img src="images/10bag.jpg" alt="Waterproof BackPack">
+          <div class="item-info">
+            <div class="item-title">Waterproof BackPack <span class="tag">Promotion</span></div>
+            <div class="item-desc">Men's Stylish Backpack <br> black, grey, red <br>⬛️ 🟫 🟥 </div>
+          </div>
+          <div class="price">26,000 MMK</div>
+        </div>
+
+        <div class="menu-item">
+          <img src="images/11.jpg" alt="Opu Fish">
+          <div class="item-info">
+            <div class="item-title">WIWU Minimalist</div>
+            <div class="item-desc">WIWU Minimalist Laptop Bag <br> available color <br> black, grey <br> ⬛️ 🟫 </div>
+          </div>
+          <div class="price">63,000 MMK</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-footer">
+      Open 24 Hours  : only Online <br>
+      <a href="contant.html" class="view-button">Order Now</a>
+    </div>
+  </section>    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-brand">
+                        <i class="fas fa-laptop me-2"></i>TechNova
+                    </div>
+                    <p class="footer-description">
+                        Your trusted partner for cutting-edge technology solutions. We provide premium laptops, computers, and accessories to power your digital life.
+                    </p>
+                </div>
+              <div class="col-lg-2 col-md-6 col-6 mb-4">
+                    <h6 class="footer-section-title">Products</h6>
+                    <a href="brand.html" class="footer-link">Laptops</a>
+                    <a href="brand.html" class="footer-link">Desktops</a>
+                    <a href="brand.html" class="footer-link">Gaming PCs</a>
+                    <a href="Accessories.html" class="footer-link">Accessories</a>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6 mb-4">
+                    <h6 class="footer-section-title">Support</h6>
+                    <a href="#" class="footer-link">Help Center</a>
+                    <a href="contant.html" class="footer-link">Contact Us</a>
+                    <a href="warranty" class="footer-link">Warranty</a>
+                    <a href="return.html" class="footer-link">Returns</a>
+                    <a href="shipping info.html" class="footer-link">Shipping Info</a>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6 mb-4">
+                    <h6 class="footer-section-title">Company</h6>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="#carrier" class="footer-link">Career</a>
+                    <a href="#ရရှိပြီး" class="footer-link">Press</a>
+                    <a href="#ရရှိပြီး" class="footer-link">Partners</a>
+                    <a href="#ရရှိပြီး" class="footer-link">Blog</a>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6 mb-4">
+                    <h6 class="footer-section-title">Connect</h6>
+                    <a href="https://www.facebook.com/share/19kCEyhj9t/" class="footer-link">Facebook</a>
+                    <a href="#" class="footer-link">Twitter</a>
+                    <a href="https://www.instagram.com/the.apexsquad?igsh=ZnV5ZHpqbmZ3Zzd2" class="footer-link">Instagram</a>
+                    <a href="#" class="footer-link">LinkedIn</a>
+                    <a href="https://www.youtube.com/@TheApexSquad-s1w" class="footer-link">YouTube</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-bottom-text">© 2024 TechNova. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html></body>
+        
